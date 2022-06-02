@@ -52,6 +52,8 @@ const gameWords = [
     if (word.length === 0) {
       setTimeout(() => {}, 1800);
       notification("No has ingresado ninguna palabra!", 'assets/icon-head-lose.svg');
+      fieldText.value = "";
+      fieldText.focus();
       return false;
     }
 
