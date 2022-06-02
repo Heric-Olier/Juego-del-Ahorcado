@@ -56,7 +56,7 @@ const gameWords = [
     }
 
     if (word.length >= 3 && word.length <= 8) {
-      setTimeout(() => {btnSaveWord(window.open("../game.html", "_self"))}, 2800);
+      setTimeout(() => {btnSaveWord(window.open("../Juego-del-Ahorcado/game.html", "_self"))}, 2800);
       notification("Palabra agregada con Exito!", 'assets/icon-head-win.svg');
       return true;
 
