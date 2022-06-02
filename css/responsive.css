@@ -1,0 +1,52 @@
+@media screen and (min-width: 768px) {
+  .button-content {
+    flex-direction: row;
+    justify-content: center;
+    width: 460px;
+  }
+
+  .btn-add-word, .leave-game {
+    width: 230px;
+    padding: 20px;
+    font-size: 19px;
+  }
+
+  .btn-start-game,
+  .new-game {
+    width: 230px;
+    padding: 23px 40px;
+    margin-top: 0;
+    margin-right: 30px;
+    margin-left: 0;
+    margin-bottom: 0;
+
+  }
+
+  .save-word {
+    line-height: 22px;
+    padding: 12px 40px;
+    width: 230px;
+    margin-top: 0;
+    margin-right: 30px;
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+
+  .content-canvas {
+    width: 460px;
+  }
+  
+  .alert {
+    top: 360px;
+    max-width: 350px;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .footer, .header-btn {
+    position: static;
+  }
+  
+}
+  
+

@@ -1,0 +1,201 @@
+/*! <---------header section --------->*/
+
+.header-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  bottom: 85px;
+}
+
+/* .logo-alura {
+  margin-left: 20px;
+  transition: all 0.2s ease-in-out;
+} */
+
+/*! <--------- Main section --------->*/
+
+.container {
+  background: linear-gradient(45deg, #ffd541 50%, #fdcd1d 50%);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.content-logo {
+  position: relative;
+  bottom: 45px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.content-logo .logo-title {
+  width: 100%;
+}
+
+/*! <--------- Notification alert section --------->*/
+
+.icon-head {
+  margin-top: 15px;
+  width: 40px;
+  
+}
+
+.alert.active {
+  opacity: 1;
+}
+
+.bounce-in-fwd.active {
+	-webkit-animation: bounce-in-fwd 700ms both;
+	        animation: bounce-in-fwd 700ms both;
+}
+
+
+.alert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  line-height: 28px;
+  opacity: 0;
+  z-index: 1;
+  font-family: "Heebo", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  padding: 30px 30px;
+  background: #1e2220;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 300px;
+  width: 100%;
+  position: absolute;
+  top: 350px;
+  /* -webkit-box-shadow: 1px 3px 7px 1px #2424244b;
+  box-shadow: 1px 3px 7px 1px #2424244b; */
+}
+
+/*! <--------- canvas section --------->*/
+
+.true-letters, .wrong-letters {
+  font-size: 25px;
+  font-family: "Heebo", sans-serif;
+  margin-top: 15px;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.wrong-letters {
+  margin-top: 45px;
+}
+
+.content-letters h2 {  /*letras erroneas*/
+  font-family: "Heebo", sans-serif;
+  color: #1e2220;
+  font-size: 18px;
+  text-align: center;
+  position: relative;
+  top: 20px;
+}
+
+.true-letters span, .wrong-letters span {
+  height: 30px;
+  width: 30px;
+  color: #1e2220;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 4px solid #ffffff;
+  transition: all 0.2s ease-in-out;
+}
+
+.num-intentos {
+  font-family: "Heebo", sans-serif;
+  font-size: 18px;
+  color: #1e2220;
+  text-align: center;
+  position: relative;
+  top: 20px;
+  
+}
+
+.content-canvas {
+  width: 350px;
+  position: relative;
+  bottom: 20px;
+
+}
+
+.canvas {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px 10px 0 0;
+  -webkit-box-shadow: 1px 2px 5px 1px #24242457;
+  box-shadow: 1px 2px 5px 1px #24242452;
+}
+
+.content-letters {
+  width: 100%;
+  height: 120px;
+  background: none;
+}
+
+/*! <--------- buttons section --------->*/
+
+.button-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 10px;
+}
+.new-game {
+  text-align: center;
+  background-size: 200% auto;
+  background-color: #1e2220;
+  font-family: "Heebo", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: rgb(255, 253, 253);
+  text-decoration: none;
+  margin-bottom: 17px;
+  padding: 22px 82px;
+  border-radius: 27px;
+  transition: all 0.2s ease-in-out;
+}
+
+.new-game:hover,
+.leave-game:hover {
+  transform: scale(1.12);
+}
+
+.new-game:hover,
+.leave-game:hover {
+  -webkit-box-shadow: 2px 2px 5px 2px #2424247c;
+  box-shadow: 2px 2px 5px 2px #2424247c;
+}
+
+.leave-game {
+  text-align: center;
+  background-color: none;
+  font-family: "Heebo", sans-serif;
+  font-weight: 700;
+  color: #1e2220;
+  text-decoration: none;
+  width: 200px;
+  padding: 12px 10px;
+  border-radius: 30px;
+  border: 3px solid rgb(255, 253, 253);
+  transition: all 0.2s ease-in-out;
+}
+
+#mobile-input {
+  position: absolute;
+  top: -100vh;
+  left: -100vh;
+}
