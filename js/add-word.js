@@ -44,10 +44,7 @@ const gameWords = [
     }
   }
 
-  // btnSaveWord.onclick = () => {
-  //   addWords();
-  // };
-  
+
   
   //validamos que la palabra tenga mas de 3 letras y menos de 8
   
@@ -59,7 +56,7 @@ const gameWords = [
     }
 
     if (word.length >= 3 && word.length <= 8) {
-      setTimeout(() => { btnSaveWord.onclick = () => {addWords();};}, 2800);
+      setTimeout(() => {btnSaveWord(window.open("../game.html", "_self"))}, 2800);
       notification("Palabra agregada con Exito!", 'assets/icon-head-win.svg');
       return true;
 
@@ -71,5 +68,9 @@ const gameWords = [
       return false;
     }
   }
+
+    btnSaveWord.onclick = () => {
+    addWords();
+  };
   
   
