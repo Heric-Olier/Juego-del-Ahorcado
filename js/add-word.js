@@ -44,9 +44,9 @@ const gameWords = [
     }
   }
 
-  btnSaveWord.onclick = () => {
-    addWords();
-  };
+  // btnSaveWord.onclick = () => {
+  //   addWords();
+  // };
   
   
   //validamos que la palabra tenga mas de 3 letras y menos de 8
@@ -59,7 +59,7 @@ const gameWords = [
     }
 
     if (word.length >= 3 && word.length <= 8) {
-      setTimeout(() => {window.open("../Juego-del-Ahorcado/game.html", "_self")}, 2800);
+      setTimeout(() => { btnSaveWord.onclick = () => {addWords();};}, 2800);
       notification("Palabra agregada con Exito!", 'assets/icon-head-win.svg');
       return true;
 
