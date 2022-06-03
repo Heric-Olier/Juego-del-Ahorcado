@@ -83,12 +83,32 @@ body {
 
 .btn-start-game:hover,
 .btn-add-word:hover,
-.logo-alura:hover,
 .save-word:hover{
-  transform: scale(1.15);
+  transform: scale(1.08);
 }
 
-.btn-start-game:hover,
+/* #ffd541  #fdcd1d */
+
+.btn-start-game:hover {
+  font-weight: bold;
+  font-size: 19.5px;
+  border: 4px solid #fff;
+  color: #1e2220;
+  -webkit-box-shadow: 2px 2px 5px 1px #2424247c;
+  box-shadow: 2px 2px 5px 1px #2424247c;
+  background: linear-gradient(45deg, #fdcd1d 53%, #ffd541 50%);
+}
+
+.btn-add-word:hover {
+  font-weight:500;
+  color: #fff;
+  border: transparent;
+  -webkit-box-shadow: 1px 2px 5px 1px #2424247c;
+  box-shadow: 1px 2px 5px 1px #2424247c;
+  background-color: #1e2220;
+
+}
+
 .save-word:hover,
 .btn-add-word:hover {
   -webkit-box-shadow: 2px 2px 5px 2px #2424247c;
@@ -105,7 +125,7 @@ body {
   width: 200px;
   padding: 12px 10px;
   border-radius: 14px;
-  border: 3px solid rgb(255, 253, 253);
+  border: 4px solid rgb(255, 253, 253);
   transition: all 0.2s ease-in-out;
 }
 
@@ -127,6 +147,8 @@ body {
 }
 
 .social-icon-content a img:hover {
+  border: 2px solid #fff;
+  border-radius: 5px;
   transform: scale(1.32);
 }
 

@@ -35,7 +35,7 @@ const gameWords = [
   //agregamos las palabras del usuario al array de palabras predeterminadas
   
   function addWords() {
-    let word = fieldText.value.toUpperCase();
+    let word = fieldText.value.toUpperCase().trim();
     let WordValid = validateWord(word)
     if (WordValid) {
       gameWords.push(word);
