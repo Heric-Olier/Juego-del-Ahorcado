@@ -209,9 +209,13 @@ const restaureGame = () => {
 btnNewGame.addEventListener("click", restaureGame);
 
 btnKeyboard.onclick = () => {
+  inputKeyboard.value = "";
   inputKeyboard.focus();
+  return true;
   console.log(btnKeyboard);
 }
+inputKeyboard.value = "";
+inputKeyboard.focus();
 
 // btnKeyboard.addEventListener("click", btnKeyboard.focus());
 // console.log(btnKeyboard);
