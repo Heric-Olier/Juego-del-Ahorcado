@@ -47,6 +47,7 @@ const gameWords = [
 
   
   //validamos que la palabra tenga mas de 3 letras y menos de 8
+  let reg = new RegExp("^[a-zA-Z ]*$", "g");
   
   function validateWord(word) {
     if (word.length === 0) {
@@ -54,20 +55,34 @@ const gameWords = [
       notification("No has ingresado ninguna palabra!", 'assets/icon-head-lose.svg');
       fieldText.value = "";
       fieldText.blur();
-      return false;
+    }
+    
+    if (!reg.test(word)) {
+      setTimeout(() => {}, 1800);
+      notification("No se permiten numeros ni caracteres especiales!", 'assets/icon-head-lose.svg');
+      fieldText.value = "";
+      fieldText.blur();
+      
+    }
+    
+    if (gameWords.includes(word)) {
+      setTimeout(() => {}, 1800);
+      notification("La palabra ya se encuentra agregada!", 'assets/icon-head-lose.svg');
+      fieldText.value = "";
+      fieldText.blur();
     }
 
     if (word.length >= 3 && word.length <= 8) {
-      setTimeout(() => {btnSaveWord(window.open("../Juego-del-Ahorcado/game.html", "_self"))}, 2800);
-      notification("Palabra agregada con Exito!", 'assets/icon-head-win.svg');
-      return true;
+      setTimeout(() => {}, 2800);
+      notification("Palabra agregada con Exito!", 'assets/icon-head-win.svg');     
 
-    } else {
+    } 
+    
+    if(word.length < 3) {
       setTimeout(() => {}, 1800);
       notification("Cantidad de Letras Invalidas!", 'assets/icon-head-lose.svg');
-      fieldText.blur();
       fieldText.value = "";
-      return false;
+      fieldText.focus();
     }
   }
 
