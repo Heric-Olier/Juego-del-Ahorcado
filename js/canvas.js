@@ -183,6 +183,7 @@ const mobileInput = document.getElementById("mobile-input");
 
 mobileInput.oninput = () => { 
   let mobileInputValue = mobileInput.value;
+  mobileInputValue.focus();
   mobileInput.value = '';
   mobileInput.blur();
 }
