@@ -53,7 +53,6 @@ const gameWords = [
       setTimeout(() => {}, 1800);
       notification("No has ingresado ninguna palabra!", 'assets/icon-head-lose.svg');
       fieldText.value = "";
-      fieldText.focus();
       return false;
     }
 
@@ -66,7 +65,6 @@ const gameWords = [
       setTimeout(() => {}, 1800);
       notification("Cantidad de Letras Invalidas!", 'assets/icon-head-lose.svg');
       fieldText.value = "";
-      fieldText.focus();
       return false;
     }
   }

@@ -41,12 +41,12 @@
     max-width: 350px;
   }
 }
-
+/* 
 @media screen and (max-height: 600px) {
   .footer, .header-btn {
     position: static;
   }
   
-}
+} */
   
 
