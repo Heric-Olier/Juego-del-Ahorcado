@@ -208,11 +208,19 @@ const restaureGame = () => {
 }
 btnNewGame.addEventListener("click", restaureGame);
 
-btnKeyboard.onclick = () => {
+
+const showKeyboard = () => {
   inputKeyboard.value = "";
   inputKeyboard.focus();
-  console.log(btnKeyboard);
 }
+
+btnKeyboard.addEventListener("click", showKeyboard);
+
+// btnKeyboard.onclick = () => {
+//   inputKeyboard.value = "";
+//   inputKeyboard.focus();
+//   console.log(btnKeyboard);
+// }
 
 
 // btnKeyboard.addEventListener("click", btnKeyboard.focus());
@@ -235,6 +243,10 @@ document.addEventListener("keyup", (event) => {
     // validamos que el usuario presione una letra y no un numero o caracter especial y de ser asi, el sistema no reconozca dichas teclas
     if (/[^a-z ]/.test(event.key)) {
       return false;
+    }
+
+    if (event.key === inputKeyboard.value) {
+      letterValid = true;
     }
     // validamos que las teclas presionadas coincidan con las letras de la palabra aleatoria
     if (event.key.toUpperCase() === letterCorrect[indexLetter]) {
