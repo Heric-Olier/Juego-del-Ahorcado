@@ -54,14 +54,14 @@ const gameWords = [
       setTimeout(() => {}, 1800);
       notification("No has ingresado ninguna palabra!", 'assets/icon-head-lose.svg');
       fieldText.value = "";
-      fieldText.blur();
     }
     
     if (!reg.test(word)) {
       setTimeout(() => {}, 1800);
       notification("No se permiten numeros ni caracteres especiales!", 'assets/icon-head-lose.svg');
       fieldText.value = "";
-      fieldText.blur();
+      fieldText.focus();
+      return false;
       
     }
     
@@ -69,13 +69,14 @@ const gameWords = [
       setTimeout(() => {}, 1800);
       notification("La palabra ya se encuentra agregada!", 'assets/icon-head-lose.svg');
       fieldText.value = "";
-      fieldText.blur();
+      fieldText.focus();
+      return false;
     }
 
     if (word.length >= 3 && word.length <= 8) {
-      setTimeout(() => {}, 2800);
-      notification("Palabra agregada con Exito!", 'assets/icon-head-win.svg');     
-
+      setTimeout(() => {window.open("../Juego-del-Ahorcado/game.html", "_self")}, 2800);
+      notification("Palabra agregada con Exito!", 'assets/icon-head-win.svg');
+      return true;    
     } 
     
     if(word.length < 3) {
