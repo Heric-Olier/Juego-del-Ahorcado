@@ -208,10 +208,11 @@ const restaureGame = () => {
 }
 btnNewGame.addEventListener("click", restaureGame);
 
+inputKeyboard.disabled = true;
 btnKeyboard.onclick = () => {
+  inputKeyboard.disabled = true;
   inputKeyboard.value = "";
   inputKeyboard.focus();
-  return true;
   console.log(btnKeyboard);
 }
 inputKeyboard.value = "";
