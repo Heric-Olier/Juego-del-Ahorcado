@@ -47,6 +47,14 @@
     position: static;
   }
   
+  .text-area-container {
+    margin: 0 auto;
+    margin-top: 2rem;
+  }
+
+  .container {
+    display: block;
+  }
 }
   
 
