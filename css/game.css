@@ -85,6 +85,25 @@
 
 /*! <--------- canvas section --------->*/
 
+.content-canvas {
+  width: 340px;
+  position: relative;
+  bottom: 45px;
+  border-radius: 8px;
+  background-color: #fdcd1d;
+  -webkit-box-shadow: 1px 2px 5px 1px #24242457;
+  box-shadow: 1px 2px 5px 1px #24242452;
+
+}
+
+.canvas {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px 10px 0 0;
+  -webkit-box-shadow: 1px 2px 5px 1px #24242457;
+  box-shadow: 1px 2px 5px 1px #24242452;
+}
+
 .true-letters, .wrong-letters {
   font-size: 25px;
   font-family: "Heebo", sans-serif;
@@ -131,24 +150,7 @@
   
 }
 
-.content-canvas {
-  width: 340px;
-  position: relative;
-  bottom: 20px;
-  border-radius: 8px;
-  background-color: #fdcd1d;
-  -webkit-box-shadow: 1px 2px 5px 1px #24242457;
-  box-shadow: 1px 2px 5px 1px #24242452;
 
-}
-
-.canvas {
-  width: 100%;
-  background-color: #fff;
-  border-radius: 10px 10px 0 0;
-  -webkit-box-shadow: 1px 2px 5px 1px #24242457;
-  box-shadow: 1px 2px 5px 1px #24242452;
-}
 
 .content-letters {
   width: 100%;
@@ -162,10 +164,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* width: 430px; */
   position: relative;
-  top: 10px;
+  top: 0px;
 }
 .new-game {
+  cursor: pointer;
   text-align: center;
   background-size: 200% auto;
   background-color: #1e2220;
@@ -176,7 +180,7 @@
   text-decoration: none;
   margin-bottom: 17px;
   padding: 22px 82px;
-  border-radius: 27px;
+  border-radius: 14px;
   transition: all 0.2s ease-in-out;
 }
 
@@ -192,6 +196,7 @@
 }
 
 .leave-game {
+  cursor: pointer;
   text-align: center;
   background-color: none;
   font-family: "Heebo", sans-serif;
@@ -200,7 +205,7 @@
   text-decoration: none;
   width: 200px;
   padding: 12px 10px;
-  border-radius: 30px;
+  border-radius: 14px;
   border: 3px solid rgb(255, 253, 253);
   transition: all 0.2s ease-in-out;
 }

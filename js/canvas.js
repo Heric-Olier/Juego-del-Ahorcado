@@ -1,5 +1,7 @@
 const screen = document.querySelector("canvas");
 const ctx = screen.getContext("2d");
+const btnNewGame = document.querySelector(".new-game"); // capturamos el boton nuevo juego
+const btnLeaveGame = document.querySelector(".leave-game"); // capturamos el boton para salir del juego
 const remainAttempts = document.getElementById("num-intentos"); // capturamos el numero de intentos restantes
 const trueLetters = document.querySelector(".true-letters"); // capturamos el span donde se mostraran las letras correctas que el usuario presiona
 const wrongLetters = document.querySelector(".wrong-letters"); // capturamos el span donde se mostraran las letras incorrectas que el usuario presiona
@@ -188,6 +190,23 @@ mobileInput.oninput = () => {
 mobileInput.focus();
 //mobileInput.onkeyup = (e) => {}
 
+
+// creamos la funcion de volver al inicio cuando el usuario presione el boton de rendirse
+const leaveGame = () => {
+  setTimeout(() => {window.open("../index.html", "_self")}, 1800);
+  notification('La palabra secreta era', 'assets/icon-head-lose.svg');
+}
+btnLeaveGame.addEventListener('click', leaveGame);
+
+
+// creamos la funcion para restablecer el juego cuando el usuario presione el boton de nuevo juego
+const restaureGame = () => {
+  setTimeout(() => {window.open("../Juego-del-Ahorcado/game.html", "_self")}, 1800);
+  notification('Juego Reiniciado!', 'assets/icon-head-win.svg'); 
+}
+btnNewGame.addEventListener("click", restaureGame);
+
+
 let letterIncorrect = createSpanIncorrect();
 let letterCorrect = createSpanCorrect();
 let counter = 8;
@@ -254,6 +273,7 @@ document.addEventListener("keyup", (event) => {
   }
 
 });
+
 
 //*todo<-------------- seccion validar Letras incorrectas -------------->*/
 
