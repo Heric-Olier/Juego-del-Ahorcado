@@ -207,8 +207,13 @@ const restaureGame = () => {
 }
 btnNewGame.addEventListener("click", restaureGame);
 
+btnKeyboard.onclick = () => {
+  btnKeyboard.focus();
+  console.log(btnKeyboard);
+}
 
-btnKeyboard.addEventListener("click", focus());
+// btnKeyboard.addEventListener("click", btnKeyboard.focus());
+// console.log(btnKeyboard);
 
 
 let letterIncorrect = createSpanIncorrect();
