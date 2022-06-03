@@ -245,7 +245,7 @@ document.addEventListener("keyup", (event) => {
       return false;
     }
 
-    if (event.key === inputKeyboard.value) {
+    if (inputKeyboard.value === letterCorrect[indexLetter].textContent) {
       btnKeyboard.addEventListener("click", showKeyboard);
       letterValid = true;
       return true;
