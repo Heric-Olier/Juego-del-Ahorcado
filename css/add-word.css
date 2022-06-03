@@ -145,7 +145,7 @@
   transition: all 0.2s ease-in-out;
 }
 
-.footer {
+footer {
   position: relative;
   top: 30px;
 }

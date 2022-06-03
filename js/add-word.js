@@ -44,19 +44,18 @@ const gameWords = [
     }
   }
 
-
   
   //validamos que la palabra tenga mas de 3 letras y menos de 8
-  let reg = new RegExp("^[a-zA-Z ]*$", "g");
   
   function validateWord(word) {
     if (word.length === 0) {
       setTimeout(() => {}, 1800);
       notification("No has ingresado ninguna palabra!", 'assets/icon-head-lose.svg');
       fieldText.value = "";
+      return false;
     }
     
-    if (!reg.test(word)) {
+    if (/^[a-zA-Z ]*$/.test(word) === false) {
       setTimeout(() => {}, 1800);
       notification("No se permiten numeros ni caracteres especiales!", 'assets/icon-head-lose.svg');
       fieldText.value = "";

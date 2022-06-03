@@ -46,7 +46,8 @@
   .social-icon-content {
     margin: 0 auto;
     margin-top: 2rem;
-    position: static;
+    display: flex;
+    justify-content: center;
    
   }
   
@@ -58,6 +59,12 @@
 
   .container {
     display: block;
+    height: auto;
+  }
+
+  footer {
+    position: static;
+  
   }
 
   .content-logo {
