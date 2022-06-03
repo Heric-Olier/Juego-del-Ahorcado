@@ -246,7 +246,10 @@ document.addEventListener("keyup", (event) => {
     }
 
     if (event.key === inputKeyboard.value) {
+      btnKeyboard.addEventListener("click", showKeyboard);
       letterValid = true;
+      return true;
+
     }
     // validamos que las teclas presionadas coincidan con las letras de la palabra aleatoria
     if (event.key.toUpperCase() === letterCorrect[indexLetter]) {
