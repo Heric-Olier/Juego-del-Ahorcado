@@ -7,6 +7,7 @@ const trueLetters = document.querySelector(".true-letters"); // capturamos el sp
 const wrongLetters = document.querySelector(".wrong-letters"); // capturamos el span donde se mostraran las letras incorrectas que el usuario presiona
 const textAlert = document.querySelector(".alert"); // capturamos el span donde se mostraran las alertas
 const btnKeyboard = document.getElementById("btn-keyboard");
+const inputKeyboard = document.getElementById("input-keyboard");
 
 //palabras predeterminadas
 const gameWords = [
@@ -208,7 +209,7 @@ const restaureGame = () => {
 btnNewGame.addEventListener("click", restaureGame);
 
 btnKeyboard.onclick = () => {
-  btnKeyboard.focus();
+  inputKeyboard.focus();
   console.log(btnKeyboard);
 }
 
