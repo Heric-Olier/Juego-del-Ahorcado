@@ -10,6 +10,33 @@
  * animation bounce-in-fwd
  * ----------------------------------------
  */
+
+ @-webkit-keyframes scale-out-center {
+        0% {
+          -webkit-transform: scale(1);
+                  transform: scale(1);
+          opacity: 1;
+        }
+        100% {
+          -webkit-transform: scale(0);
+                  transform: scale(0);
+          opacity: 1;
+        }
+      }
+      @keyframes scale-out-center {
+        0% {
+          -webkit-transform: scale(1);
+                  transform: scale(1);
+          opacity: 1;
+        }
+        100% {
+          -webkit-transform: scale(0);
+                  transform: scale(0);
+          opacity: 1;
+        }
+      }
+
+      
  @-webkit-keyframes bounce-in-fwd {
   0% {
     -webkit-transform: scale(0);
@@ -114,3 +141,5 @@
             animation-timing-function: ease-out;
   }
 }
+
+      

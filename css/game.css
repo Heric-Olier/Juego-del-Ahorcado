@@ -27,8 +27,8 @@
 
 .content-logo {
   position: relative;
-  bottom: 45px;
-  width: 300px;
+  bottom: 35px;
+  width: 280px;
   display: flex;
   justify-content: center;
 }
@@ -49,6 +49,10 @@
   opacity: 1;
 }
 
+.scale-out-center.active {
+  -webkit-animation: scale-out-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+          animation: scale-out-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
 .bounce-in-fwd.active {
 	-webkit-animation: bounce-in-fwd 700ms both;
 	        animation: bounce-in-fwd 700ms both;
@@ -92,13 +96,15 @@
 }
 
 .wrong-letters {
-  margin-top: 45px;
+  margin-top: 35px;
+
 }
 
 .content-letters h2 {  /*letras erroneas*/
   font-family: "Heebo", sans-serif;
   color: #1e2220;
   font-size: 18px;
+  font-weight: bold;
   text-align: center;
   position: relative;
   top: 20px;
@@ -116,18 +122,23 @@
 
 .num-intentos {
   font-family: "Heebo", sans-serif;
+  font-weight: bold;
   font-size: 18px;
   color: #1e2220;
   text-align: center;
   position: relative;
-  top: 20px;
+  top: 25px;
   
 }
 
 .content-canvas {
-  width: 350px;
+  width: 340px;
   position: relative;
   bottom: 20px;
+  border-radius: 8px;
+  background-color: #fdcd1d;
+  -webkit-box-shadow: 1px 2px 5px 1px #24242457;
+  box-shadow: 1px 2px 5px 1px #24242452;
 
 }
 

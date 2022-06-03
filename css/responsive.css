@@ -5,6 +5,10 @@
     width: 460px;
   }
 
+  .content-logo {
+    width: 320px;
+  }
+
   .btn-add-word, .leave-game {
     width: 230px;
     padding: 20px;
