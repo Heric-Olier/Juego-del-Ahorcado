@@ -6,7 +6,7 @@ const remainAttempts = document.getElementById("num-intentos"); // capturamos el
 const trueLetters = document.querySelector(".true-letters"); // capturamos el span donde se mostraran las letras correctas que el usuario presiona
 const wrongLetters = document.querySelector(".wrong-letters"); // capturamos el span donde se mostraran las letras incorrectas que el usuario presiona
 const textAlert = document.querySelector(".alert"); // capturamos el span donde se mostraran las alertas
-
+const btnKeyboard = document.getElementById("btn-keyboard");
 
 //palabras predeterminadas
 const gameWords = [
@@ -179,16 +179,16 @@ const notification = (text, img) => {
  
 };
 
-const mobileInput = document.getElementById("mobile-input");
+// const mobileInput = document.getElementById("mobile-input");
 
-mobileInput.oninput = () => { 
-  let mobileInputValue = mobileInput.value;
-  mobileInputValue.focus();
-  mobileInput.value = '';
-  mobileInput.blur();
-}
+// mobileInput.oninput = () => { 
+//   let mobileInputValue = mobileInput.value;
+//   mobileInputValue.focus();
+//   mobileInput.value = '';
+//   mobileInput.blur();
+// }
 
-mobileInput.focus();
+// mobileInput.focus();
 //mobileInput.onkeyup = (e) => {}
 
 
@@ -206,6 +206,12 @@ const restaureGame = () => {
   notification('Juego Reiniciado!', 'assets/icon-head-win.svg'); 
 }
 btnNewGame.addEventListener("click", restaureGame);
+
+const showKeyboard = () => {
+  showKeyboard.value = "";
+  showKeyboard.focus();
+}
+btnKeyboard.addEventListener("click", showKeyboard);
 
 
 let letterIncorrect = createSpanIncorrect();
