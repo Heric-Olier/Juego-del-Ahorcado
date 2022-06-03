@@ -245,12 +245,8 @@ document.addEventListener("keyup", (event) => {
       return false;
     }
 
-    if (inputKeyboard.textContent === letterCorrect[indexLetter].textContent) {
-      letterValid = true;
-
-    }
     // validamos que las teclas presionadas coincidan con las letras de la palabra aleatoria
-    if (event.key.toUpperCase() === letterCorrect[indexLetter]) {
+    if (event.key.toUpperCase() === letterCorrect[indexLetter] && inputKeyboard.value ===  letterCorrect[indexLetter]) {
       correctSpans[indexLetter].textContent = letterCorrect[indexLetter];
       letterCorrect = letterCorrect.replace(letterCorrect[indexLetter], "1");
       countWin++;
