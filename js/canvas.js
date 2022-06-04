@@ -238,7 +238,6 @@ remainAttempts.textContent = counter;
 
 // creamos la funcion para que el usuario presione una letra y se valide
 document.addEventListener("keyup", (event) => {
-  let virtualLetter = inputKeyboard.value.toUpperCase().trim();
   const correctSpans = document.querySelectorAll(".true-letters span");
   const wrongSpans = document.querySelectorAll(".wrong-letters span");
 
@@ -258,10 +257,6 @@ document.addEventListener("keyup", (event) => {
     }
 
     letterValid = false;
-
-    if (event.key.toUpperCase() === virtualLetter) {
-      letterValid = true;
-    }
 
   }
 
@@ -286,7 +281,21 @@ document.addEventListener("keyup", (event) => {
     validateDrawCanvas(); // validamos si el usuario se equivoco y dibujamos el canvas
     remainAttempts.textContent = "";
     remainAttempts.textContent = counter;
-
+    
+    const validateWord = () => {
+      let virtualLetter = inputKeyboard.value.toUpperCase();
+      console.log(virtualLetter);
+      if (letterCorrect.includes(virtualLetter)) {
+      letterValid = true;
+      }
+    }
+    
+    inputKeyboard.addEventListener("keyup", validateWord);
+    
+    
+    inputKeyboard.value = "";
+    inputKeyboard.focus();
+    
   //*todo<---------- validamos si el usuario gano o perdio y se lo notificamos ---------->*/
 
   ///colocar en el link  /Juego-del-Ahorcado
@@ -305,9 +314,6 @@ document.addEventListener("keyup", (event) => {
 
 });
 
-
-inputKeyboard.value = "";
-inputKeyboard.focus();
 
 
 
