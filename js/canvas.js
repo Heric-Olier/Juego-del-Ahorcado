@@ -240,10 +240,10 @@ remainAttempts.textContent = counter;
 // creamos la funcion para que el usuario presione una letra y se valide
 document.addEventListener("keyup", (event) => {
   
-
+  
   for (const indexLetter in letterCorrect) {
     // validamos que el usuario presione una letra y no un numero o caracter especial y de ser asi, el sistema no reconozca dichas teclas
-
+    
     if (/[^a-z ]/.test(event.key)) {
       return false;
     }
@@ -256,8 +256,14 @@ document.addEventListener("keyup", (event) => {
       break;
     }
 
-    letterValid = false;
+    inputKeyboard.addEventListener('input', updateValue);
+    
+    function updateValue(e) {
+      correctSpans[indexLetter].textContent = e.target.value.toUpperCase();
+    }
 
+    letterValid = false;
+    
   }
   
   //validamos que las letras presionadas no sean correctas y las mostramos en el span de letras incorrectas
@@ -304,11 +310,6 @@ document.addEventListener("keyup", (event) => {
 
 const log = document.getElementById('valores');
 
-inputKeyboard.addEventListener('input', updateValue);
-
-function updateValue(e) {
-  correctSpans.textContent = e.target.value.toUpperCase();
-}
 
 // function virtualWord(e) {
 //   let virtualLetter = inputKeyboard.value.toUpperCase();
