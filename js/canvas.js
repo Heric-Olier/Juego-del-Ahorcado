@@ -235,7 +235,9 @@ let letterValid = true;
 let countWin = 0;
 
 remainAttempts.textContent = counter;
+
 // creamos la funcion para que el usuario presione una letra y se valide
+const validateLetter = (e) => {
 document.addEventListener("keyup", (event) => {
   let virtualLetter = inputKeyboard.value.toUpperCase().trim();
   const correctSpans = document.querySelectorAll(".true-letters span");
@@ -304,10 +306,14 @@ document.addEventListener("keyup", (event) => {
    notification('Ganaste! Bien hecho!', 'assets/icon-head-win.svg');
   }
 
-inputKeyboard.value = "";
-inputKeyboard.focus();
 
 });
+
+}
+
+inputKeyboard.value = "";
+inputKeyboard.focus();
+inputKeyboard.addEventListener("keyup", validateLetter);
 
 
 //*todo<-------------- seccion validar Letras incorrectas -------------->*/
