@@ -259,8 +259,13 @@ document.addEventListener("keyup", (event) => {
     inputKeyboard.addEventListener('input', updateValue);
     
     function updateValue(e) {
+      if(e.target.value === letterCorrect[indexLetter]) {
       correctSpans[indexLetter].textContent = e.target.value.toUpperCase();
+      letterCorrect = letterCorrect.replace(letterCorrect[indexLetter], "1");
+      countWin++;
+      letterValid = true;
     }
+  }
 
     letterValid = false;
     
