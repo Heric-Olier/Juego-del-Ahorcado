@@ -266,13 +266,13 @@ document.addEventListener("keyup", (event) => {
      notification('Ganaste! Bien hecho!', 'assets/icon-head-win.svg');
     }
     
-    inputKeyboard.addEventListener('input', updateValue);
+    // inputKeyboard.addEventListener('input', updateValue);
       
-    function updateValue(e) {
-      e.target.value = event.key.toUpperCase();
-      inputKeyboard.value = "";
-      console.log('e target key ' + e.target.value);
-    }
+    // function updateValue(e) {
+    //   e.target.value = event.key.toUpperCase();
+    //   inputKeyboard.value = "";
+    //   console.log('e target key ' + e.target.value);
+    // }
 });
 
 
