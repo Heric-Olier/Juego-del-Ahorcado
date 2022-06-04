@@ -248,7 +248,6 @@ document.addEventListener("keyup", (event) => {
 
     if (/[^a-z ]/.test(inputKeyboard.value)) {
       console.log("no es una letra virtual");
-      inputKeyboard.value = "";
       return false;
     }
     
@@ -263,21 +262,21 @@ document.addEventListener("keyup", (event) => {
       letterValid = true;
       break;
     }
-    inputKeyboard.value = "";
-
+    
     letterValid = false;
-
+    inputKeyboard.value = "";
+    
   }
 
   //validamos que las letras presionadas no sean correctas y las mostramos en el span de letras incorrectas
   while (counterWrongLetters <= 7) {
     if (!letterValid) {
-      wrongSpans[counterWrongLetters].textContent = event.key.toUpperCase();
-      
+      wrongSpans[counterWrongLetters].textContent = virtualLetter;
       counterWrongLetters++;
       remainAttempts.textContent = counterWrongLetters;
       break;
     }
+    inputKeyboard.value = "";
     break;
   }
 
