@@ -259,13 +259,11 @@ document.addEventListener("keyup", (event) => {
     inputKeyboard.addEventListener('input', updateValue);
     
     function updateValue(e) {
-      if(e.target.value.toUpperCase() === letterCorrect[indexLetter]) {
-      correctSpans[indexLetter].textContent = letterCorrect[indexLetter];
-      letterCorrect = letterCorrect.replace(letterCorrect[indexLetter], "1");
-      countWin++;
-      letterValid = true;
+      e.target.value = e.target.value.toUpperCase();
+      e.target.value = event.key.toUpperCase();
+      console.log('e target key ' + e.target.value);
     }
-  }
+  
 
     letterValid = false;
     
@@ -281,7 +279,7 @@ document.addEventListener("keyup", (event) => {
     }
     break;
   }
-  console.log(event.key);
+  console.log('event key ' + event.key);
   
   // validamos si el usuario agota sus intentos y se lo notificamos
   if (!letterValid) {
