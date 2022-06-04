@@ -256,19 +256,21 @@ document.addEventListener("keyup", (event) => {
       break;
     }
 
-    inputKeyboard.addEventListener('input', updateValue);
     
-    function updateValue(e) {
-      e.target.value = e.target.value.toUpperCase();
-      e.target.value = event.key.toUpperCase();
-      console.log('e target key ' + e.target.value);
-    }
-  
-
+    
     letterValid = false;
     
   }
   
+  inputKeyboard.addEventListener('input', updateValue);
+  
+  function updateValue(e) {
+    e.target.value = event.key.toUpperCase();
+    inputKeyboard.value = "";
+    console.log('e target key ' + e.target.value);
+  }
+
+
   //validamos que las letras presionadas no sean correctas y las mostramos en el span de letras incorrectas
   while (counterWrongLetters <= 7) {
     if (!letterValid) {
