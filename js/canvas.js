@@ -210,11 +210,21 @@ btnNewGame.addEventListener("click", restaureGame);
 
 
 const showKeyboard = () => {
-  inputKeyboard.value = "";
-  inputKeyboard.focus();
+  let virtualLetter = inputKeyboard.value.toUpperCase();
+      if (virtualLetter === letterCorrect[indexLetter] && inputKeyboard.value ===  letterCorrect[indexLetter]) {
+        correctSpans[indexLetter].textContent = letterCorrect[indexLetter];
+        letterCorrect = letterCorrect.replace(letterCorrect[indexLetter], "1");
+        countWin++;
+        letterValid = true;
+  }
 }
 
-btnKeyboard.addEventListener("click", showKeyboard);
+inputKeyboard.value = "";
+inputKeyboard.focus();
+
+
+
+// btnKeyboard.addEventListener("click", showKeyboard);
 
 // btnKeyboard.onclick = () => {
 //   inputKeyboard.value = "";
@@ -293,6 +303,9 @@ document.addEventListener("keyup", (event) => {
    notification('Ganaste! Bien hecho!', 'assets/icon-head-win.svg');
   }
 
+  inputKeyboard.value = "";
+inputKeyboard.focus();
+
 });
 
 
@@ -318,3 +331,5 @@ const validateDrawCanvas = () => {
     drawHeadRotate();
   }
 };
+
+
