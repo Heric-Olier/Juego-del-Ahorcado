@@ -284,9 +284,9 @@ document.addEventListener("keyup", (event) => {
     
     const validateWord = () => {
       let virtualLetter = inputKeyboard.value.toUpperCase();
-      if (letterCorrect.includes(virtualLetter)) {
-        letterValid = true;
+      if (event.key.toUpperCase() === virtualLetter) {
         console.log('hola ' + letterValid);
+        letterValid = true;
       }
     }
     
