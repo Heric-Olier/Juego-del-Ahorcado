@@ -303,34 +303,38 @@ document.addEventListener("keyup", (event) => {
   
 });
 
+const log = document.getElementById('valores');
 
+inputKeyboard.addEventListener('input', updateValue);
 
-
-
-function virtualWord(e) {
-  let virtualLetter = inputKeyboard.value.toUpperCase();
-  inputKeyboard.addEventListener('input', virtualWord);
-  for (const indexLetter in letterCorrect) {
-    // validamos que el usuario presione una letra y no un numero o caracter especial y de ser asi, el sistema no reconozca dichas teclas
-
-    if (/[^a-z ]/.test(event.key)) {
-      return false;
-    }
-    // validamos que las teclas presionadas coincidan con las letras de la palabra aleatoria
-    if (virtualLetter === letterCorrect[indexLetter]){
-      correctSpans[indexLetter].textContent = letterCorrect[indexLetter];
-      letterCorrect = letterCorrect.replace(letterCorrect[indexLetter], "1");
-      correctSpans[indexLetter].textContent = e.target.value;
-      countWin++;
-      letterValid = true;
-      break;
-    }
-
-    letterValid = false;
-
-  }
-
+function updateValue(e) {
+  log.textContent = e.target.value;
 }
+
+// function virtualWord(e) {
+//   let virtualLetter = inputKeyboard.value.toUpperCase();
+//   inputKeyboard.addEventListener('input', virtualWord);
+//   for (const indexLetter in letterCorrect) {
+//     // validamos que el usuario presione una letra y no un numero o caracter especial y de ser asi, el sistema no reconozca dichas teclas
+
+//     if (/[^a-z ]/.test(event.key)) {
+//       return false;
+//     }
+//     // validamos que las teclas presionadas coincidan con las letras de la palabra aleatoria
+//     if (virtualLetter === letterCorrect[indexLetter]){
+//       correctSpans[indexLetter].textContent = letterCorrect[indexLetter];
+//       letterCorrect = letterCorrect.replace(letterCorrect[indexLetter], "1");
+//       correctSpans[indexLetter].textContent = e.target.value;
+//       countWin++;
+//       letterValid = true;
+//       break;
+//     }
+
+//     letterValid = false;
+
+//   }
+
+// }
 
 
 
