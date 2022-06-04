@@ -186,7 +186,7 @@ const notification = (text,  img) => {
 // creamos la funcion de volver al inicio cuando el usuario presione el boton de rendirse
 const leaveGame = () => {
   setTimeout(() => {window.open("../Juego-del-Ahorcado/index.html", "_self")}, 1800);
-  notification(`La palabra secreta era ${sortedWord} `, 'assets/icon-head-lose.svg');
+  notification(`Te rendiste!...La palabra secreta era ${sortedWord} `, 'assets/icon-head-lose.svg');
 }
 btnLeaveGame.addEventListener('click', leaveGame);
 
