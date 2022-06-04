@@ -250,15 +250,7 @@ document.addEventListener("keyup", (event) => {
       return false;
     }
     // validamos que las teclas presionadas coincidan con las letras de la palabra aleatoria
-    if (event.key.toUpperCase() === letterCorrect[indexLetter]){
-      correctSpans[indexLetter].textContent = letterCorrect[indexLetter];
-      letterCorrect = letterCorrect.replace(letterCorrect[indexLetter], "1");
-      countWin++;
-      letterValid = true;
-      break;
-    }
-
-    if(virtualLetter === letterCorrect[indexLetter]){
+    if (event.key.toUpperCase() === letterCorrect[indexLetter] && virtualLetter === letterCorrect[indexLetter]){
       correctSpans[indexLetter].textContent = letterCorrect[indexLetter];
       letterCorrect = letterCorrect.replace(letterCorrect[indexLetter], "1");
       countWin++;
@@ -313,7 +305,7 @@ document.addEventListener("keyup", (event) => {
 
 inputKeyboard.value = "";
 inputKeyboard.focus();
-inputKeyboard.addEventListener("keyup", validateLetter);
+inputKeyboard.onkeyup = validateLetter;
 
 
 //*todo<-------------- seccion validar Letras incorrectas -------------->*/
