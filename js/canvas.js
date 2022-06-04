@@ -284,18 +284,18 @@ document.addEventListener("keyup", (event) => {
     
     const validateWord = () => {
       let virtualLetter = inputKeyboard.value.toUpperCase();
-      console.log(virtualLetter);
       if (letterCorrect.includes(virtualLetter)) {
-      letterValid = true;
+        letterValid = true;
+        console.log('hola ' + letterValid);
       }
     }
     
-    inputKeyboard.addEventListener("keyup", validateWord);
+    inputKeyboard.addEventListener("input", validateWord);
     
     
     inputKeyboard.value = "";
     inputKeyboard.focus();
-    
+
   //*todo<---------- validamos si el usuario gano o perdio y se lo notificamos ---------->*/
 
   ///colocar en el link  /Juego-del-Ahorcado
