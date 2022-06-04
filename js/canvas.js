@@ -237,7 +237,6 @@ let countWin = 0;
 remainAttempts.textContent = counter;
 
 // creamos la funcion para que el usuario presione una letra y se valide
-const validateLetter = (e) => {
 document.addEventListener("keyup", (event) => {
   let virtualLetter = inputKeyboard.value.toUpperCase().trim();
   const correctSpans = document.querySelectorAll(".true-letters span");
@@ -250,7 +249,7 @@ document.addEventListener("keyup", (event) => {
       return false;
     }
     // validamos que las teclas presionadas coincidan con las letras de la palabra aleatoria
-    if (event.key.toUpperCase() === letterCorrect[indexLetter] && virtualLetter === letterCorrect[indexLetter]){
+    if (event.key.toUpperCase() === letterCorrect[indexLetter]){
       correctSpans[indexLetter].textContent = letterCorrect[indexLetter];
       letterCorrect = letterCorrect.replace(letterCorrect[indexLetter], "1");
       countWin++;
@@ -259,13 +258,18 @@ document.addEventListener("keyup", (event) => {
     }
 
     letterValid = false;
+
+    if (event.key.toUpperCase() === virtualLetter) {
+      letterValid = true;
+    }
+
   }
 
   //validamos que las letras presionadas no sean correctas y las mostramos en el span de letras incorrectas
   while (counterWrongLetters <= 7) {
     if (!letterValid) {
       wrongSpans[counterWrongLetters].textContent = event.key.toUpperCase();
-      wrongSpans[counterWrongLetters].textContent = virtualLetter;
+      
       counterWrongLetters++;
       remainAttempts.textContent = counterWrongLetters;
       break;
@@ -301,11 +305,10 @@ document.addEventListener("keyup", (event) => {
 
 });
 
-}
 
 inputKeyboard.value = "";
 inputKeyboard.focus();
-inputKeyboard.onkeyup = validateLetter;
+
 
 
 //*todo<-------------- seccion validar Letras incorrectas -------------->*/
