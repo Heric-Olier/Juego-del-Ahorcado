@@ -233,53 +233,46 @@ let counter = 8;
 let counterWrongLetters = 0;
 let letterValid = true;
 let countWin = 0;
-
+const correctSpans = document.querySelectorAll(".true-letters span");
+const wrongSpans = document.querySelectorAll(".wrong-letters span");
 remainAttempts.textContent = counter;
 
 // creamos la funcion para que el usuario presione una letra y se valide
-document.addEventListener("input", (event) => {
-  const correctSpans = document.querySelectorAll(".true-letters span");
-  const wrongSpans = document.querySelectorAll(".wrong-letters span");
-  let virtualLetter = inputKeyboard.value.toUpperCase();
-  console.log({virtualLetter});
+document.addEventListener("keyup", (event) => {
+  
 
   for (const indexLetter in letterCorrect) {
     // validamos que el usuario presione una letra y no un numero o caracter especial y de ser asi, el sistema no reconozca dichas teclas
 
-    if (/[^a-z ]/.test(inputKeyboard.value)) {
-      console.log("no es una letra virtual");
-      return false;
-    }
-    
     if (/[^a-z ]/.test(event.key)) {
       return false;
     }
     // validamos que las teclas presionadas coincidan con las letras de la palabra aleatoria
-    if (virtualLetter === letterCorrect[indexLetter]){
+    if (event.key.toUpperCase() === letterCorrect[indexLetter]){
       correctSpans[indexLetter].textContent = letterCorrect[indexLetter];
       letterCorrect = letterCorrect.replace(letterCorrect[indexLetter], "1");
       countWin++;
       letterValid = true;
       break;
     }
-    
-    letterValid = false;
-    inputKeyboard.value = "";
-    
-  }
 
+    letterValid = false;
+
+  }
+  
   //validamos que las letras presionadas no sean correctas y las mostramos en el span de letras incorrectas
   while (counterWrongLetters <= 7) {
     if (!letterValid) {
-      wrongSpans[counterWrongLetters].textContent = virtualLetter;
+      wrongSpans[counterWrongLetters].textContent = event.key.toUpperCase();
+      
       counterWrongLetters++;
       remainAttempts.textContent = counterWrongLetters;
       break;
     }
-    inputKeyboard.value = "";
     break;
   }
-
+  console.log(event.key);
+  
   // validamos si el usuario agota sus intentos y se lo notificamos
   if (!letterValid) {
     if (counter > 0) {
@@ -306,8 +299,39 @@ document.addEventListener("input", (event) => {
    notification('Ganaste! Bien hecho!', 'assets/icon-head-win.svg');
   }
 
-
+  
+  
 });
+
+
+
+
+
+function virtualWord(e) {
+  let virtualLetter = inputKeyboard.value.toUpperCase();
+  inputKeyboard.addEventListener('input', virtualWord);
+  for (const indexLetter in letterCorrect) {
+    // validamos que el usuario presione una letra y no un numero o caracter especial y de ser asi, el sistema no reconozca dichas teclas
+
+    if (/[^a-z ]/.test(event.key)) {
+      return false;
+    }
+    // validamos que las teclas presionadas coincidan con las letras de la palabra aleatoria
+    if (virtualLetter === letterCorrect[indexLetter]){
+      correctSpans[indexLetter].textContent = letterCorrect[indexLetter];
+      letterCorrect = letterCorrect.replace(letterCorrect[indexLetter], "1");
+      correctSpans[indexLetter].textContent = e.target.value;
+      countWin++;
+      letterValid = true;
+      break;
+    }
+
+    letterValid = false;
+
+  }
+
+}
+
 
 
 
