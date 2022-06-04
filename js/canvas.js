@@ -143,8 +143,9 @@ const drawHeadRotate = () => {
 //*<-------------- seccion validar Letras Correctas -------------->*/
 
 // creamos la funcion para escoger una palabra aleatoria dentro del array de palabras predeterminadas
+const sortedWord = gameWords[Math.floor(Math.random() * gameWords.length)];
+
 const randomWord = () => {
-  const sortedWord = gameWords[Math.floor(Math.random() * gameWords.length)];
   console.log(sortedWord);
   return sortedWord;
 };
@@ -168,7 +169,7 @@ const createSpanIncorrect = () => {
 };
 
 //creamos la funcion para mostrar las notificaciones de victoria o derrota
-const notification = (text, img) => {
+const notification = (text,  img) => {
   const imgAlert = document.createElement("img");
   textAlert.textContent = "";
   textAlert.classList.add("active");
@@ -177,7 +178,7 @@ const notification = (text, img) => {
   imgAlert.classList.add("icon-head");
   textAlert.textContent = text;
   textAlert.appendChild(imgAlert);
- 
+  
 };
 
 
@@ -185,7 +186,7 @@ const notification = (text, img) => {
 // creamos la funcion de volver al inicio cuando el usuario presione el boton de rendirse
 const leaveGame = () => {
   setTimeout(() => {window.open("../index.html", "_self")}, 1800);
-  notification('La palabra secreta era', 'assets/icon-head-lose.svg');
+  notification(`La palabra secreta era ${sortedWord} `, 'assets/icon-head-lose.svg');
 }
 btnLeaveGame.addEventListener('click', leaveGame);
 
@@ -256,7 +257,7 @@ document.addEventListener("keyup", (event) => {
     ///colocar en el link  /Juego-del-Ahorcado
     if (counter === 0) {
         setTimeout(() => {window.open("../Juego-del-Ahorcado/game.html", "_self")}, 1800);
-        notification("Intentos agotados, Perdiste!", 'assets/icon-head-lose.svg');
+        notification(`Perdiste! la palabra secreta era ${sortedWord} `, 'assets/icon-head-lose.svg');
       }
     
   

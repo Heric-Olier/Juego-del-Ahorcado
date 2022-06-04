@@ -58,6 +58,9 @@
 	        animation: bounce-in-fwd 700ms both;
 }
 
+.sorted-word {
+  color: #fdcd1d;
+}
 
 .alert {
   display: flex;
@@ -260,9 +263,9 @@
   transform: scale(1.25);
 }
 
-.input-keyboard {
+/* .input-keyboard {
   /* color: transparent; */
-}
+
 
 
 
