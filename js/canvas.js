@@ -264,7 +264,6 @@ document.addEventListener("keyup", (event) => {
   while (counterWrongLetters <= 7) {
     if (!letterValid) {
       wrongSpans[counterWrongLetters].textContent = event.key.toUpperCase();
-      
       counterWrongLetters++;
       remainAttempts.textContent = counterWrongLetters;
       break;
@@ -308,7 +307,7 @@ const log = document.getElementById('valores');
 inputKeyboard.addEventListener('input', updateValue);
 
 function updateValue(e) {
-  log.textContent = e.target.value.toUpperCase();
+  correctSpans.textContent = e.target.value.toUpperCase();
 }
 
 // function virtualWord(e) {
