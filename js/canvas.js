@@ -240,21 +240,30 @@ remainAttempts.textContent = counter;
 document.addEventListener("keyup", (event) => {
   const correctSpans = document.querySelectorAll(".true-letters span");
   const wrongSpans = document.querySelectorAll(".wrong-letters span");
+  let virtualLetter = inputKeyboard.value.toUpperCase();
+  console.log({virtualLetter});
 
   for (const indexLetter in letterCorrect) {
     // validamos que el usuario presione una letra y no un numero o caracter especial y de ser asi, el sistema no reconozca dichas teclas
 
+    if (/[^a-z ]/.test(inputKeyboard.value)) {
+      console.log("no es una letra virtual");
+      inputKeyboard.value = "";
+      return false;
+    }
+    
     if (/[^a-z ]/.test(event.key)) {
       return false;
     }
     // validamos que las teclas presionadas coincidan con las letras de la palabra aleatoria
-    if (event.key.toUpperCase() === letterCorrect[indexLetter]){
+    if (virtualLetter === letterCorrect[indexLetter]){
       correctSpans[indexLetter].textContent = letterCorrect[indexLetter];
       letterCorrect = letterCorrect.replace(letterCorrect[indexLetter], "1");
       countWin++;
       letterValid = true;
       break;
     }
+    inputKeyboard.value = "";
 
     letterValid = false;
 
@@ -282,19 +291,6 @@ document.addEventListener("keyup", (event) => {
     remainAttempts.textContent = "";
     remainAttempts.textContent = counter;
     
-    const validateWord = () => {
-      let virtualLetter = inputKeyboard.value.toUpperCase();
-      if (event.key.toUpperCase() === virtualLetter) {
-        console.log('hola ' + letterValid);
-        letterValid = true;
-      }
-    }
-    
-    inputKeyboard.addEventListener("input", validateWord);
-    
-    
-    inputKeyboard.value = "";
-    inputKeyboard.focus();
 
   //*todo<---------- validamos si el usuario gano o perdio y se lo notificamos ---------->*/
 
