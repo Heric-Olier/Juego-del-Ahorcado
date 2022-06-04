@@ -180,17 +180,6 @@ const notification = (text, img) => {
  
 };
 
-// const mobileInput = document.getElementById("mobile-input");
-
-// mobileInput.oninput = () => { 
-//   let mobileInputValue = mobileInput.value;
-//   mobileInputValue.focus();
-//   mobileInput.value = '';
-//   mobileInput.blur();
-// }
-
-// mobileInput.focus();
-//mobileInput.onkeyup = (e) => {}
 
 
 // creamos la funcion de volver al inicio cuando el usuario presione el boton de rendirse
@@ -200,7 +189,6 @@ const leaveGame = () => {
 }
 btnLeaveGame.addEventListener('click', leaveGame);
 
-
 // creamos la funcion para restablecer el juego cuando el usuario presione el boton de nuevo juego
 const restaureGame = () => {
   setTimeout(() => {window.open("../Juego-del-Ahorcado/game.html", "_self")}, 1800);
@@ -209,37 +197,20 @@ const restaureGame = () => {
 btnNewGame.addEventListener("click", restaureGame);
 
 
-
-
-
-
-
-// btnKeyboard.addEventListener("click", showKeyboard);
-
-// btnKeyboard.onclick = () => {
-//   inputKeyboard.value = "";
-//   inputKeyboard.focus();
-//   console.log(btnKeyboard);
-// }
-
-
-// btnKeyboard.addEventListener("click", btnKeyboard.focus());
-// console.log(btnKeyboard);
-
-
 let letterIncorrect = createSpanIncorrect();
 let letterCorrect = createSpanCorrect();
 let counter = 8;
 let counterWrongLetters = 0;
 let letterValid = true;
 let countWin = 0;
-const correctSpans = document.querySelectorAll(".true-letters span");
-const wrongSpans = document.querySelectorAll(".wrong-letters span");
 remainAttempts.textContent = counter;
 
 // creamos la funcion para que el usuario presione una letra y se valide
+
 document.addEventListener("keyup", (event) => {
   
+  const correctSpans = document.querySelectorAll(".true-letters span");
+  const wrongSpans = document.querySelectorAll(".wrong-letters span");
   
   for (const indexLetter in letterCorrect) {
     // validamos que el usuario presione una letra y no un numero o caracter especial y de ser asi, el sistema no reconozca dichas teclas
@@ -255,21 +226,8 @@ document.addEventListener("keyup", (event) => {
       letterValid = true;
       break;
     }
-
-    
-    
-    letterValid = false;
-    
+    letterValid = false;  
   }
-  
-  inputKeyboard.addEventListener('input', updateValue);
-  
-  function updateValue(e) {
-    e.target.value = event.key.toUpperCase();
-    inputKeyboard.value = "";
-    console.log('e target key ' + e.target.value);
-  }
-
 
   //validamos que las letras presionadas no sean correctas y las mostramos en el span de letras incorrectas
   while (counterWrongLetters <= 7) {
@@ -282,36 +240,46 @@ document.addEventListener("keyup", (event) => {
     break;
   }
   console.log('event key ' + event.key);
+
   
-  // validamos si el usuario agota sus intentos y se lo notificamos
-  if (!letterValid) {
+  //*todo<---------- validamos si el usuario gano o perdio y se lo notificamos ---------->*/
+  
+  if (!letterValid) 
     if (counter > 0) {
       counter--;
     }
-
+  
     validateDrawCanvas(); // validamos si el usuario se equivoco y dibujamos el canvas
     remainAttempts.textContent = "";
     remainAttempts.textContent = counter;
-    
-
-  //*todo<---------- validamos si el usuario gano o perdio y se lo notificamos ---------->*/
-
-  ///colocar en el link  /Juego-del-Ahorcado
-
+  
+    ///colocar en el link  /Juego-del-Ahorcado
     if (counter === 0) {
+        setTimeout(() => {window.open("../Juego-del-Ahorcado/game.html", "_self")}, 1800);
+        notification("Intentos agotados, Perdiste!", 'assets/icon-head-lose.svg');
+      }
+    
+  
+    if (countWin === correctSpans.length) {
       setTimeout(() => {window.open("../Juego-del-Ahorcado/game.html", "_self")}, 1800);
-      notification("Intentos agotados, Perdiste!", 'assets/icon-head-lose.svg');
+     notification('Ganaste! Bien hecho!', 'assets/icon-head-win.svg');
     }
-  }
-
-  if (countWin === correctSpans.length) {
-    setTimeout(() => {window.open("../Juego-del-Ahorcado/game.html", "_self")}, 1800);
-   notification('Ganaste! Bien hecho!', 'assets/icon-head-win.svg');
-  }
-
-  
-  
+    
+    inputKeyboard.addEventListener('input', updateValue);
+      
+    function updateValue(e) {
+      e.target.value = event.key.toUpperCase();
+      inputKeyboard.value = "";
+      console.log('e target key ' + e.target.value);
+    }
 });
+
+
+
+// validamos si el usuario agota sus intentos y se lo notificamos
+
+
+
 
 const log = document.getElementById('valores');
 
