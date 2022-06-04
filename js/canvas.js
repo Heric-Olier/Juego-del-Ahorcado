@@ -240,14 +240,15 @@ document.addEventListener("keyup", (event) => {
   let virtualLetter = inputKeyboard.value.toUpperCase();
   const correctSpans = document.querySelectorAll(".true-letters span");
   const wrongSpans = document.querySelectorAll(".wrong-letters span");
+
   for (const indexLetter in letterCorrect) {
     // validamos que el usuario presione una letra y no un numero o caracter especial y de ser asi, el sistema no reconozca dichas teclas
-    if (/[^a-z ]/.test(event.key)) {
+
+    if (/[^a-z ]/.test(event.key, virtualLetter)) {
       return false;
     }
-
     // validamos que las teclas presionadas coincidan con las letras de la palabra aleatoria
-    if (event.key.toUpperCase() === letterCorrect[indexLetter] && virtualLetter ===  letterCorrect[indexLetter]) {
+    if (event.key.toUpperCase() === letterCorrect[indexLetter] && virtualLetter === letterCorrect[indexLetter]){
       correctSpans[indexLetter].textContent = letterCorrect[indexLetter];
       letterCorrect = letterCorrect.replace(letterCorrect[indexLetter], "1");
       countWin++;
@@ -262,6 +263,7 @@ document.addEventListener("keyup", (event) => {
   while (counterWrongLetters <= 7) {
     if (!letterValid) {
       wrongSpans[counterWrongLetters].textContent = event.key.toUpperCase();
+      wrongSpans[counterWrongLetters].textContent = virtualLetter;
       counterWrongLetters++;
       remainAttempts.textContent = counterWrongLetters;
       break;
