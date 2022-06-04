@@ -237,7 +237,7 @@ let countWin = 0;
 remainAttempts.textContent = counter;
 
 // creamos la funcion para que el usuario presione una letra y se valide
-document.addEventListener("keyup", (event) => {
+document.addEventListener("input", (event) => {
   const correctSpans = document.querySelectorAll(".true-letters span");
   const wrongSpans = document.querySelectorAll(".wrong-letters span");
   let virtualLetter = inputKeyboard.value.toUpperCase();
