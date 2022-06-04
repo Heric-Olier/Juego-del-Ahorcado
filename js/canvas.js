@@ -209,18 +209,8 @@ const restaureGame = () => {
 btnNewGame.addEventListener("click", restaureGame);
 
 
-const showKeyboard = () => {
-  let virtualLetter = inputKeyboard.value.toUpperCase();
-      if (virtualLetter === letterCorrect[indexLetter] && inputKeyboard.value ===  letterCorrect[indexLetter]) {
-        correctSpans[indexLetter].textContent = letterCorrect[indexLetter];
-        letterCorrect = letterCorrect.replace(letterCorrect[indexLetter], "1");
-        countWin++;
-        letterValid = true;
-  }
-}
 
-inputKeyboard.value = "";
-inputKeyboard.focus();
+
 
 
 
@@ -247,6 +237,7 @@ let countWin = 0;
 remainAttempts.textContent = counter;
 // creamos la funcion para que el usuario presione una letra y se valide
 document.addEventListener("keyup", (event) => {
+  let virtualLetter = inputKeyboard.value.toUpperCase();
   const correctSpans = document.querySelectorAll(".true-letters span");
   const wrongSpans = document.querySelectorAll(".wrong-letters span");
   for (const indexLetter in letterCorrect) {
@@ -256,7 +247,7 @@ document.addEventListener("keyup", (event) => {
     }
 
     // validamos que las teclas presionadas coincidan con las letras de la palabra aleatoria
-    if (event.key.toUpperCase() === letterCorrect[indexLetter] && inputKeyboard.value ===  letterCorrect[indexLetter]) {
+    if (event.key.toUpperCase() === letterCorrect[indexLetter] && virtualLetter ===  letterCorrect[indexLetter]) {
       correctSpans[indexLetter].textContent = letterCorrect[indexLetter];
       letterCorrect = letterCorrect.replace(letterCorrect[indexLetter], "1");
       countWin++;
@@ -303,7 +294,7 @@ document.addEventListener("keyup", (event) => {
    notification('Ganaste! Bien hecho!', 'assets/icon-head-win.svg');
   }
 
-  inputKeyboard.value = "";
+inputKeyboard.value = "";
 inputKeyboard.focus();
 
 });
