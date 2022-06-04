@@ -308,7 +308,7 @@ const log = document.getElementById('valores');
 inputKeyboard.addEventListener('input', updateValue);
 
 function updateValue(e) {
-  log.textContent = e.target.value;
+  log.textContent = e.target.value.toUpperCase();
 }
 
 // function virtualWord(e) {
