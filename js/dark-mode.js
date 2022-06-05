@@ -6,11 +6,15 @@ const socialIconContentDark = document.querySelector(".social-icon-content-dark-
 const nameFooter = document.querySelector(".name-footer"); //nombre del footer en modo claro
 const nameFooterDark = document.querySelector(".name-footer-dm"); //nombre del footer en modo oscuro
 
-btnSwitch.addEventListener("click", () => {
+  btnSwitch.addEventListener("click", () => {
   document.body.classList.toggle("dark");
   btnSwitch.classList.toggle("active");
 
-  if (logoTitleLight.classList.contains("disabled") && socialIconContentLight.classList.contains("disabled") && nameFooter.classList.contains("disabled")) {
+  if (
+    logoTitleLight.classList.contains("disabled") &&
+    socialIconContentLight.classList.contains("disabled") &&
+    nameFooter.classList.contains("disabled")
+  ) {
     logoTitleLight.classList.remove("disabled");
     logoTitleDark.classList.remove("active");
     socialIconContentLight.classList.remove("disabled");
@@ -24,9 +28,7 @@ btnSwitch.addEventListener("click", () => {
     socialIconContentDark.classList.add("disabled");
     nameFooter.classList.add("active");
     nameFooterDark.classList.add("disabled");
-
   } else {
-
     logoTitleLight.classList.remove("active");
     logoTitleDark.classList.remove("disabled");
     socialIconContentLight.classList.remove("active");
@@ -41,4 +43,6 @@ btnSwitch.addEventListener("click", () => {
     nameFooter.classList.add("disabled");
     nameFooterDark.classList.add("active");
   }
+
+  
 });

@@ -16,7 +16,7 @@ body {
 
 .switch-mode {
   background: var(--black-semi);
-  border-radius: 1000px;
+  border-radius: 8px;
   margin-right: 40px;
   border: none;
   position: relative;
@@ -44,7 +44,7 @@ button span {
   top: 1;
   left: 0;
   right: unset;
-  border-radius: 100px;
+  border-radius: 6px;
   transition: 0.3s ease all;
   box-shadow: 0px 0px 2px 2px rgb(0, 0, 0, 0.2);
 }

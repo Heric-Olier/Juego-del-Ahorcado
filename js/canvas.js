@@ -146,7 +146,7 @@ const drawHeadRotate = () => {
 const sortedWord = gameWords[Math.floor(Math.random() * gameWords.length)];
 
 const randomWord = () => {
-  console.log(sortedWord);
+  // console.log(sortedWord);
   return sortedWord;
 };
 
@@ -240,7 +240,7 @@ document.addEventListener("keyup", (event) => {
     }
     break;
   }
-  console.log('event key ' + event.key);
+
 
   
   //*todo<---------- validamos si el usuario gano o perdio y se lo notificamos ---------->*/

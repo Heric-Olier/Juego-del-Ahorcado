@@ -8,7 +8,6 @@
   --white-bone: #f5f7fa;
 }
 
-
 /*! <--------- Main section --------->*/
 
 body.dark .container-index,
@@ -30,17 +29,47 @@ body.dark .container {
   display: none;
 }
 
+.logo-title-game.active,
+.logo-title-game-dm.active {
+  display: block;
+}
+
+.logo-title-game.disabled,
+.logo-title-game-dm.disabled {
+  display: none;
+}
+
+/*! <--------- Canvas section --------->*/
+
+body.dark .content-canvas {
+  background-color: var(--dark-bold);
+}
+
+body.dark canvas {
+  background-color: var(--shadow-dark-bold);
+}
+
+
+body.dark .num-intentos,
+body.dark h2,
+body.dark .true-letters span,
+body.dark .wrong-letters span {
+  color: var(--white-gray);
+}
+
 /*! <--------- button section --------->*/
 
 body.dark .btn-start-game,
-body.dark .save-word {
+body.dark .save-word,
+body.dark .new-game {
   background: var(--dark-light-gray);
   color: var(--white-bone);
   -webkit-box-shadow: 1px 2px 5px 1px var(--shadow-dark-bold);
   box-shadow: 1px 2px 5px 1px var(--shadow-dark-bold);
 }
 
-body.dark .btn-add-word {
+body.dark .btn-add-word,
+body.dark .leave-game {
   border: 2.5px solid var(--dark-light-gray);
   border-color: var(--white-gray);
   color: var(--white-gray);
@@ -49,7 +78,8 @@ body.dark .btn-add-word {
 }
 
 body.dark .btn-start-game:hover,
-body.dark .save-word:hover {
+body.dark .save-word:hover,
+body.dark .new-game:hover {
   border: 4px solid var(--dark-light-gray);
   background: linear-gradient(
     45deg,
@@ -58,7 +88,8 @@ body.dark .save-word:hover {
   );
 }
 
-body.dark .btn-add-word:hover {
+body.dark .btn-add-word:hover,
+body.dark .leave-game:hover {
   background: var(--dark-light-gray);
   border: none;
 }
@@ -72,8 +103,8 @@ body.dark .text-content {
 }
 
 body.dark .alert {
-    background-color: var(--dark-bold);
-    color: var(--white-bone);
+  background-color: var(--dark-bold);
+  color: var(--white-bone);
 }
 
 /*! <--------- footer section --------->*/
