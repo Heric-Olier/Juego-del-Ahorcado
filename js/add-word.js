@@ -32,6 +32,8 @@ const gameWords = [
    
   };
 
+  fieldText.focus();
+
   //agregamos las palabras del usuario al array de palabras predeterminadas
   
   function addWords() {
@@ -46,13 +48,13 @@ const gameWords = [
 
   
   //validamos que la palabra tenga mas de 3 letras y menos de 8
-  
+  fieldText.focus();
+
   function validateWord(word) {
     if (word.length === 0) {
       setTimeout(() => {}, 1800);
       notification("No has ingresado ninguna palabra!", 'assets/icon-head-lose.svg');
-      fieldText.value = "";
-      return false;
+      fieldText.focus();
     }
     
     if (/^[a-zA-Z ]*$/.test(word) === false) {
@@ -85,6 +87,9 @@ const gameWords = [
       fieldText.focus();
     }
   }
+
+  fieldText.focus();
+  
 
     btnSaveWord.onclick = () => {
     addWords();

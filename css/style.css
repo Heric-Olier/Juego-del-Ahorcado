@@ -12,6 +12,53 @@ body {
   bottom: 85px;
 }
 
+/*! <---------switch button section --------->*/
+
+.switch-mode {
+  background: var(--black-semi);
+  border-radius: 1000px;
+  margin-right: 40px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  outline: none;
+}
+
+button span {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  display: block;
+  background: none;
+  color: var(--white-bone);
+}
+
+.switch-mode::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background: var(--white-bone);
+  top: 1;
+  left: 0;
+  right: unset;
+  border-radius: 100px;
+  transition: 0.3s ease all;
+  box-shadow: 0px 0px 2px 2px rgb(0, 0, 0, 0.2);
+}
+
+.switch-mode.active {
+  background: var(--dark-light-gray);
+  color: #000;
+}
+
+.switch-mode.active::after {
+  right: 0;
+  left: unset;
+}
+
 /* .logo-alura {
   margin-left: 20px;
   transition: all 0.2s ease-in-out;
@@ -68,24 +115,9 @@ body {
   transition: all 0.2s ease-in-out;
 }
 
-.save-word {
-  text-align: center;
-  background-size: 200% auto;
-  background-color: #1e2220;
-  font-family: "Heebo", sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  color: rgb(255, 253, 253);
-  text-decoration: none;
-  margin-bottom: 17px;
-  padding: 22px 55px;
-  border-radius: 14px;
-  transition: all 0.2s ease-in-out;
-}
 
 .btn-start-game:hover,
-.btn-add-word:hover,
-.save-word:hover {
+.btn-add-word:hover {
   transform: scale(1.08);
 }
 
@@ -110,7 +142,6 @@ body {
   background-color: #1e2220;
 }
 
-.save-word:hover,
 .btn-add-word:hover {
   -webkit-box-shadow: 2px 2px 5px 2px #2424247c;
   box-shadow: 2px 2px 5px 2px #2424247c;
@@ -135,10 +166,6 @@ body {
 .social-icon-content-dark-mode {
   display: none;
 }
-
-
-
-
 
 .social-icon-content a {
   display: inline-block;
