@@ -20,4 +20,28 @@ btnSwitch.addEventListener("click", () => {
     logoTitleGameDark.classList.add("active");
   }
 
+  // Guardamos el estado del modo oscuro en el localStorage
+  if (document.body.classList.contains("dark")) {
+    localStorage.setItem("darkMode", true);
+  } else {
+    localStorage.setItem("darkMode", false);
+  }
 });
+
+if (localStorage.getItem("darkMode") === "true") {
+  document.body.classList.add("dark");
+  btnSwitch.classList.add("active");
+  if (logoTitleGameLight.classList.contains("disabled")) {
+    logoTitleGameLight.classList.remove("disabled");
+    logoTitleGameDark.classList.remove("active");
+
+    logoTitleGameLight.classList.add("active");
+    logoTitleGameDark.classList.add("disabled");
+  } else {
+    logoTitleGameLight.classList.remove("active");
+    logoTitleGameDark.classList.remove("disabled");
+
+    logoTitleGameLight.classList.add("disabled");
+    logoTitleGameDark.classList.add("active");
+  }
+}

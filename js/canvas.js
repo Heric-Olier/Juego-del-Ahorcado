@@ -97,6 +97,18 @@ const drawBody = () => {
   ctx.fillRect(223.99, 119.41, 1.3, 24.71); //borde negro camisa derecho
 };
 
+const drawBodyDark = () => {
+  ctx.fillStyle = "#d0d7e3"; // ?color gris camisa dark mode
+  ctx.fillRect(154.44, 103.5, 92.79, 69.59);
+  ctx.fillStyle = "#7C5011"; // ?color Marron piel
+  ctx.fillRect(154.64, 144.12, 23.25, 29.06); //brazo izquierdo
+  ctx.fillRect(223.68, 144.12, 23.25, 29.06); //brazo derecho
+  ctx.fillStyle = "#000000"; //? color negro
+  ctx.fillRect(176.27, 119.41, 1.3, 24.71); //borde negro camisa izquierdo
+  ctx.fillRect(223.99, 119.41, 1.3, 24.71); //borde negro camisa derecho
+};
+
+
 /*<--------6* dibujamos el pantalon ------->*/
 
 const drawPants = () => {
@@ -137,6 +149,7 @@ const drawHeadRotate = () => {
   ctx.fillStyle = "#FFA1FD"; // ?color rosa lengua
   ctx.fillRect(177.57, 74.53, 11.71, 11.57); //lengua rosa
 };
+
 
 //*!<-------------- seccion logica del juego -------------->*/
 
@@ -244,14 +257,13 @@ document.addEventListener("keyup", (event) => {
   }
 
 
-  
   //*todo<---------- validamos si el usuario gano o perdio y se lo notificamos ---------->*/
   
   if (!letterValid) 
     if (counter > 0) {
       counter--;
     }
-  
+
     validateDrawCanvas(); // validamos si el usuario se equivoco y dibujamos el canvas
     remainAttempts.textContent = "";
     remainAttempts.textContent = counter;
@@ -280,11 +292,6 @@ document.addEventListener("keyup", (event) => {
 
 
 // validamos si el usuario agota sus intentos y se lo notificamos
-
-
-
-
-const log = document.getElementById('valores');
 
 
 // function virtualWord(e) {
@@ -319,6 +326,7 @@ const log = document.getElementById('valores');
 //*todo<-------------- seccion validar Letras incorrectas -------------->*/
 
 // validamos si el usuario va agotando sus intentos y dibujamos el canvas
+
 const validateDrawCanvas = () => {
   if (counter === 7) {
     drawThreeVertical();
