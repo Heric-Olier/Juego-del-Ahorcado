@@ -1,7 +1,7 @@
 # Desafio Juego del Ahorcado - ALURA LATAM - ORACLE ONE EDUCATION
 
 ---
-# WORKING IN PROGRESS....                               <img src="https://i.imgur.com/DFZqBtg.png" width='80px' >
+# WORK IN PROGRESS....                               <img src="https://i.imgur.com/DFZqBtg.png" width='80px' >
 Link abajo 👇
 
 ---
