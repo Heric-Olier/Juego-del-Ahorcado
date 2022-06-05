@@ -1,4 +1,3 @@
-
 body {
   height: auto;
 }
@@ -8,7 +7,7 @@ body {
 .header-btn {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: right;
   position: relative;
   bottom: 85px;
 }
@@ -28,9 +27,11 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  transition: 0.3s ease all;
 }
 
 .content-logo {
+  justify-content: space-between;
   position: relative;
   bottom: 80px;
   width: 285px;
@@ -38,8 +39,9 @@ body {
   justify-content: center;
 }
 
-.content-logo .logo-title {
-  width: 100%;
+
+.logo-title-dm {
+  display: none;
 }
 
 /*! <--------- buttons section --------->*/
@@ -83,7 +85,7 @@ body {
 
 .btn-start-game:hover,
 .btn-add-word:hover,
-.save-word:hover{
+.save-word:hover {
   transform: scale(1.08);
 }
 
@@ -100,13 +102,12 @@ body {
 }
 
 .btn-add-word:hover {
-  font-weight:500;
+  font-weight: 500;
   color: #fff;
   border: transparent;
   -webkit-box-shadow: 1px 2px 5px 1px #2424247c;
   box-shadow: 1px 2px 5px 1px #2424247c;
   background-color: #1e2220;
-
 }
 
 .save-word:hover,
@@ -131,6 +132,13 @@ body {
 
 /*! <--------- social buttons section --------->*/
 
+.social-icon-content-dark-mode {
+  display: none;
+}
+
+
+
+
 
 .social-icon-content a {
   display: inline-block;
@@ -152,6 +160,26 @@ body {
   transform: scale(1.32);
 }
 
+.social-icon-content-dark-mode a {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.social-icon-content-dark-mode a img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+.social-icon-content-dark-mode a img:hover {
+  border: 2px solid #fff;
+  border-radius: 5px;
+  transform: scale(1.32);
+}
+
 footer {
   position: relative;
   top: 60px;
@@ -163,4 +191,11 @@ footer {
   margin-top: 10px;
   font-family: "Heebo", sans-serif;
 }
+
+
+.name-footer-dm {
+  display: none;
+}
+
+
 
