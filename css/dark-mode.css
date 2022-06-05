@@ -71,6 +71,11 @@ body.dark .text-content {
   background-color: var(--white-gray);
 }
 
+body.dark .alert {
+    background-color: var(--dark-bold);
+    color: var(--white-bone);
+}
+
 /*! <--------- footer section --------->*/
 
 .social-icon-content.active,
