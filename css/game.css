@@ -18,16 +18,16 @@
   margin-right: 40px;
   border: none;
   position: relative;
-  top: 65px;
+  top: 92px;
   cursor: pointer;
   display: flex;
   outline: none;
 }
 
 button span {
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
   display: block;
   background: none;
   color: var(--white-bone);
@@ -36,8 +36,8 @@ button span {
 .switch-mode::after {
   content: "";
   display: block;
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   position: absolute;
   background: var(--white-bone);
   top: 1;

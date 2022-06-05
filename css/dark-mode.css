@@ -43,10 +43,14 @@ body.dark .container {
 
 body.dark .content-canvas {
   background-color: var(--dark-bold);
+  -webkit-box-shadow: 1px 2px 5px 1px var(--shadow-dark-bold);
+  box-shadow: 1px 2px 5px 1px var(--shadow-dark-bold);
 }
 
 body.dark canvas {
   background-color: var(--shadow-dark-bold);
+  -webkit-box-shadow: 1px 2px 5px 1px var(--shadow-dark-bold);
+  box-shadow: 1px 2px 5px 1px var(--shadow-dark-bold);
 }
 
 
