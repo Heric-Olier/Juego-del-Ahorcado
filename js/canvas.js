@@ -12,7 +12,14 @@ const alertContainer = document.querySelector(".alert-container");
 
 //palabras predeterminadas
 
-const gameWords = JSON.parse(localStorage.getItem("gameWords"));
+const getLocalStorage = () => {
+  gameWords = JSON.parse(localStorage.getItem("gameWords"));
+}
+
+getLocalStorage();
+
+
+
 
 //*!<-------------- seccion dibujar con canvas -------------->*/
 

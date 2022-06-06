@@ -6,28 +6,6 @@ const textAlert = document.querySelector(".alert"); // capturamos el span donde 
 const alertContainer = document.querySelector(".alert-container");
 
 
-//palabras predeterminadas
-const gameWords = [
-  'ALURA',
-  'PYTHON',
-  'JAVA',
-  'CAFE',
-  'GATOS',
-  'PROGRAMAR',
-  'ELEFANTE',
-  'HTML',
-  'BACKEND',
-  'FRONTEND',
-  'DEVELOPER',
-  'MADRE'
-]; 
-
-//guardamos el array en localStorage
-
-const saveLocalStorage = () => {
-  localStorage.setItem("gameWords", JSON.stringify(gameWords));
-}
-
 //agregamos las palabras del usuario al array de palabras predeterminadas
 
 function addWords() {
