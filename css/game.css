@@ -8,7 +8,7 @@
   justify-content: right;
   position: absolute;
   top: 0;
-  margin-top: 25px;
+  margin-top: 15px;
 }
 
 /*! <---------switch button section --------->*/
@@ -72,6 +72,7 @@ button span {
 }
 
 .content-logo {
+  margin-bottom: 20px;
   width: 350px;
   display: flex;
   justify-content: center;
@@ -155,7 +156,7 @@ button span {
 
 .content-canvas {
   width: 340px;
-  margin: 50px 0;
+  margin-bottom: 40px;
   border-radius: 8px;
   background-color: #fdcd1d;
   -webkit-box-shadow: 1px 2px 5px 1px #24242457;
