@@ -46,26 +46,37 @@
   }
 }
 
-@media screen and (min-height: 580px) {
-  .social-icon-content {
-    margin: 0 auto;
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
+@media screen and (max-height: 570px) {
+  .button-content {
+    margin-top: 30px;
+  }
+
+  .logo-title,
+  .logo-title-dm {
+    width: 270px;
+  }
+
+
+  .save-word {
+    margin-bottom: 10px;
+  }
+
+  .text-content {
+    max-height: 170px;
   }
 
   .text-area-container {
-    margin: 0 auto;
-    margin-bottom: 1.5rem;
-    min-height: 100px;
+    position: relative;
+    top: 30px;
   }
 
   .content-logo {
-    margin-top: 20px;
+    margin-top: 30px;
   }
 
-  footer {
-    position: static;
+  .container {
+    height: auto;
+  
   }
 
   body {
