@@ -24,7 +24,6 @@ En este Segundo desafio del curso se nos pidio crear un "Juego del Ahorcado" con
 **Caracteristicas:**
 - Diseño Responsivo - Mobile UI
 - Modo oscuro para darle un toque mas elegante y agradable a la vista del usuario
-- LocalStorage para guardar las palabras del usuario
 - Dibujo de la horca realizado con canvas
 
 ### Tecnologias utilizadas:
@@ -33,7 +32,8 @@ En este Segundo desafio del curso se nos pidio crear un "Juego del Ahorcado" con
 
 ---
 
-![](https://i.imgur.com/XYsfj5v.jpg)
+![](https://i.imgur.com/yeYsvNZ.jpg)
+![](https://i.imgur.com/vX9dcFU.jpg)
 
 
 
