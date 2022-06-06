@@ -8,6 +8,7 @@ const wrongLetters = document.querySelector(".wrong-letters"); // capturamos el 
 const textAlert = document.querySelector(".alert"); // capturamos el span donde se mostraran las alertas
 const btnKeyboard = document.getElementById("btn-keyboard");
 const inputKeyboard = document.getElementById("input-keyboard");
+const alertContainer = document.querySelector(".alert-container");
 
 //palabras predeterminadas
 const gameWords = [
@@ -108,7 +109,6 @@ const drawBodyDark = () => {
   ctx.fillRect(223.99, 119.41, 1.3, 24.71); //borde negro camisa derecho
 };
 
-
 /*<--------6* dibujamos el pantalon ------->*/
 
 const drawPants = () => {
@@ -150,7 +150,6 @@ const drawHeadRotate = () => {
   ctx.fillRect(177.57, 74.53, 11.71, 11.57); //lengua rosa
 };
 
-
 //*!<-------------- seccion logica del juego -------------->*/
 
 //*<-------------- seccion validar Letras Correctas -------------->*/
@@ -182,34 +181,40 @@ const createSpanIncorrect = () => {
 };
 
 //creamos la funcion para mostrar las notificaciones de victoria o derrota
-const notification = (text,  img) => {
+const notification = (text, img) => {
   const imgAlert = document.createElement("img");
   textAlert.textContent = "";
+  alertContainer.classList.add("active");
   textAlert.classList.add("active");
-  setTimeout(() => {textAlert.classList.remove("active") }, 2600);
+  setTimeout(() => {
+    textAlert.classList.remove("active");
+  }, 2600);
   imgAlert.src = img;
   imgAlert.classList.add("icon-head");
   textAlert.textContent = text;
   textAlert.appendChild(imgAlert);
-  
 };
-
-
 
 // creamos la funcion de volver al inicio cuando el usuario presione el boton de rendirse
 const leaveGame = () => {
-  setTimeout(() => {window.open("../Juego-del-Ahorcado/index.html", "_self")}, 1800);
-  notification(`Te rendiste!...La palabra secreta era ${sortedWord} `, 'assets/icon-head-lose.svg');
-}
-btnLeaveGame.addEventListener('click', leaveGame);
+  setTimeout(() => {
+    window.open("../Juego-del-Ahorcado/index.html", "_self");
+  }, 1800);
+  notification(
+    `Te rendiste!...La palabra secreta era ${sortedWord} `,
+    "assets/icon-head-lose.svg"
+  );
+};
+btnLeaveGame.addEventListener("click", leaveGame);
 
 // creamos la funcion para restablecer el juego cuando el usuario presione el boton de nuevo juego
 const restaureGame = () => {
-  setTimeout(() => {window.open("../Juego-del-Ahorcado/game.html", "_self")}, 1800);
-  notification('Juego Reiniciado!', 'assets/icon-head-win.svg'); 
-}
+  setTimeout(() => {
+    window.open("../Juego-del-Ahorcado/game.html", "_self");
+  }, 1800);
+  notification("Juego Reiniciado!", "assets/icon-head-win.svg");
+};
 btnNewGame.addEventListener("click", restaureGame);
-
 
 let letterIncorrect = createSpanIncorrect();
 let letterCorrect = createSpanCorrect();
@@ -222,25 +227,24 @@ remainAttempts.textContent = counter;
 // creamos la funcion para que el usuario presione una letra y se valide
 
 document.addEventListener("keyup", (event) => {
-  
   const correctSpans = document.querySelectorAll(".true-letters span");
   const wrongSpans = document.querySelectorAll(".wrong-letters span");
-  
+
   for (const indexLetter in letterCorrect) {
     // validamos que el usuario presione una letra y no un numero o caracter especial y de ser asi, el sistema no reconozca dichas teclas
-    
+
     if (/[^a-z ]/.test(event.key)) {
       return false;
     }
     // validamos que las teclas presionadas coincidan con las letras de la palabra aleatoria
-    if (event.key.toUpperCase() === letterCorrect[indexLetter]){
+    if (event.key.toUpperCase() === letterCorrect[indexLetter]) {
       correctSpans[indexLetter].textContent = letterCorrect[indexLetter];
       letterCorrect = letterCorrect.replace(letterCorrect[indexLetter], "1");
       countWin++;
       letterValid = true;
       break;
     }
-    letterValid = false;  
+    letterValid = false;
   }
 
   //validamos que las letras presionadas no sean correctas y las mostramos en el span de letras incorrectas
@@ -252,76 +256,36 @@ document.addEventListener("keyup", (event) => {
       break;
     }
     break;
-
-
   }
 
-
   //*todo<---------- validamos si el usuario gano o perdio y se lo notificamos ---------->*/
-  
-  if (!letterValid) 
+
+  if (!letterValid)
     if (counter > 0) {
       counter--;
     }
 
-    validateDrawCanvas(); // validamos si el usuario se equivoco y dibujamos el canvas
-    remainAttempts.textContent = "";
-    remainAttempts.textContent = counter;
-  
-    ///colocar en el link  /Juego-del-Ahorcado
-    if (counter === 0) {
-        setTimeout(() => {window.open("../Juego-del-Ahorcado/game.html", "_self")}, 1800);
-        notification(`Perdiste! la palabra secreta era ${sortedWord} `, 'assets/icon-head-lose.svg');
-      }
-    
-  
-    if (countWin === correctSpans.length) {
-      setTimeout(() => {window.open("../Juego-del-Ahorcado/game.html", "_self")}, 1800);
-     notification('Ganaste! Bien hecho!', 'assets/icon-head-win.svg');
-    }
-    
-    // inputKeyboard.addEventListener('input', updateValue);
-      
-    // function updateValue(e) {
-    //   e.target.value = event.key.toUpperCase();
-    //   inputKeyboard.value = "";
-    //   console.log('e target key ' + e.target.value);
-    // }
+  validateDrawCanvas(); // validamos si el usuario se equivoco y dibujamos el canvas
+  remainAttempts.textContent = "";
+  remainAttempts.textContent = counter;
+
+  ///colocar en el link  /Juego-del-Ahorcado
+  if (counter === 0) {
+    setTimeout(() => {
+      window.open("../Juego-del-Ahorcado/game.html", "_self");
+    }, 1800);
+    notification(
+      `Perdiste! la palabra secreta era: ${sortedWord}`,"assets/icon-head-lose.svg"
+    );
+  }
+
+  if (countWin === correctSpans.length) {
+    setTimeout(() => {
+      window.open("../Juego-del-Ahorcado/game.html", "_self");
+    }, 1800);
+    notification("Ganaste! Bien hecho!", "assets/icon-head-win.svg");
+  }
 });
-
-
-
-// validamos si el usuario agota sus intentos y se lo notificamos
-
-
-// function virtualWord(e) {
-//   let virtualLetter = inputKeyboard.value.toUpperCase();
-//   inputKeyboard.addEventListener('input', virtualWord);
-//   for (const indexLetter in letterCorrect) {
-//     // validamos que el usuario presione una letra y no un numero o caracter especial y de ser asi, el sistema no reconozca dichas teclas
-
-//     if (/[^a-z ]/.test(event.key)) {
-//       return false;
-//     }
-//     // validamos que las teclas presionadas coincidan con las letras de la palabra aleatoria
-//     if (virtualLetter === letterCorrect[indexLetter]){
-//       correctSpans[indexLetter].textContent = letterCorrect[indexLetter];
-//       letterCorrect = letterCorrect.replace(letterCorrect[indexLetter], "1");
-//       correctSpans[indexLetter].textContent = e.target.value;
-//       countWin++;
-//       letterValid = true;
-//       break;
-//     }
-
-//     letterValid = false;
-
-//   }
-
-// }
-
-
-
-
 
 //*todo<-------------- seccion validar Letras incorrectas -------------->*/
 
@@ -346,5 +310,3 @@ const validateDrawCanvas = () => {
     drawHeadRotate();
   }
 };
-
-

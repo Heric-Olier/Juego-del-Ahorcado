@@ -1,4 +1,4 @@
-/*! <---------header section --------->*/
+
 
 /*! <---------header section --------->*/
 
@@ -6,8 +6,9 @@
   width: 100%;
   display: flex;
   justify-content: right;
-  position: relative;
-  bottom: 85px;
+  position: absolute;
+  top: 0;
+  margin-top: 15px;
 }
 
 /*! <---------switch button section --------->*/
@@ -18,7 +19,6 @@
   margin-right: 40px;
   border: none;
   position: relative;
-  top: 60px;
   cursor: pointer;
   display: flex;
   outline: none;
@@ -72,9 +72,7 @@ button span {
 }
 
 .content-logo {
-  position: relative;
-  bottom: 35px;
-  width: 280px;
+  width: 350px;
   display: flex;
   justify-content: center;
 }
@@ -98,6 +96,10 @@ button span {
   
 }
 
+.alert-container.active {
+  z-index: 2;
+  }
+
 .alert.active {
   opacity: 1;
 }
@@ -109,6 +111,16 @@ button span {
 .bounce-in-fwd.active {
 	-webkit-animation: bounce-in-fwd 700ms both;
 	        animation: bounce-in-fwd 700ms both;
+}
+
+.alert-container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .alert {
@@ -129,8 +141,6 @@ button span {
   text-align: center;
   max-width: 300px;
   width: 100%;
-  position: absolute;
-  top: 350px;
   /* -webkit-box-shadow: 1px 3px 7px 1px #2424244b;
   box-shadow: 1px 3px 7px 1px #2424244b; */
 }
@@ -139,8 +149,7 @@ button span {
 
 .content-canvas {
   width: 340px;
-  position: relative;
-  bottom: 45px;
+  margin: 50px 0;
   border-radius: 8px;
   background-color: #fdcd1d;
   -webkit-box-shadow: 1px 2px 5px 1px #24242457;

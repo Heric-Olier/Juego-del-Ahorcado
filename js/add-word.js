@@ -3,6 +3,7 @@
 const fieldText = document.querySelector(".text-content"); // capturamos el text area
 const btnSaveWord = document.querySelector(".save-word"); // capturamos el boton de guardar y empezar el juego
 const textAlert = document.querySelector(".alert"); // capturamos el span donde se mostraran las alertas
+const alertContainer = document.querySelector(".alert-container");
 
 const gameWords = [
   'ALURA',
@@ -23,8 +24,9 @@ const gameWords = [
   const notification = (text, img) => {
     const imgAlert = document.createElement("img");
     textAlert.textContent = "";
+    alertContainer.classList.add("active");
     textAlert.classList.add("active");
-    setTimeout(() => {textAlert.classList.remove("active") }, 2600);
+    setTimeout(() => {textAlert.classList.remove("active"); alertContainer.classList.remove("active")}, 2600);
     imgAlert.src = img;
     imgAlert.classList.add("icon-head");
     textAlert.textContent = text;

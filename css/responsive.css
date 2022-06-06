@@ -38,17 +38,11 @@
 
   .content-canvas {
     width: 430px;
-    margin: 0 auto;
   }
 
   .button-content {
     width: 430px;
     margin: 0 auto;
-  }
-  
-  .alert {
-    top: 360px;
-    max-width: 350px;
   }
 }
 
@@ -67,27 +61,16 @@
     min-height: 100px;
   }
 
-   .content-canvas {
-    margin: 0 auto;
-  }
+    .content-logo {
+      margin-top: 20px;
+    }
 
   .container {
-    display: block;
     height: auto;
+
   }
 
   
-  .content-logo {
-    display: block;
-    margin: 0 auto;
-    margin-top: 4rem;
-    margin-bottom: 3rem;
-  }
-  
-  .alert {
-    top: 260px;
-    left: 42px;
-  }
 
   footer {
     position: static;

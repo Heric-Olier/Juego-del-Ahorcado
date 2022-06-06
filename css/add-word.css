@@ -5,8 +5,10 @@
   width: 100%;
   display: flex;
   justify-content: right;
-  position: relative;
-  bottom: 85px;
+  position: absolute;
+  top: 0;
+  margin-top: 15px;
+
 }
 
 /*! <---------switch button section --------->*/
@@ -17,7 +19,6 @@
   margin-right: 40px;
   border: none;
   position: relative;
-  top: 80px;
   cursor: pointer;
   display: flex;
   outline: none;
@@ -60,6 +61,8 @@ button span {
 /*! <--------- Main section --------->*/
 
 .container {
+  z-index: 1;
+  position: relative;
   background: linear-gradient(45deg, #ffd541 50%, #fdcd1d 50%);
   height: 100vh;
   width: 100%;
@@ -70,8 +73,6 @@ button span {
 }
 
 .content-logo {
-  position: relative;
-  bottom: 30px;
   width: 300px;
   display: flex;
   justify-content: center;
@@ -127,6 +128,10 @@ button span {
   
 }
 
+.alert-container.active {
+z-index: 2;
+}
+
 .alert.active {
   opacity: 1;
 }
@@ -140,6 +145,16 @@ button span {
 	        animation: bounce-in-fwd 700ms both;
 }
 
+.alert-container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
 
 .alert {
   display: flex;
@@ -148,6 +163,7 @@ button span {
   flex-direction: column;
   line-height: 28px;
   opacity: 0;
+  transform: translateY(-550px);
   z-index: 1;
   font-family: "Heebo", sans-serif;
   font-weight: bold;
@@ -159,8 +175,6 @@ button span {
   text-align: center;
   max-width: 300px;
   width: 100%;
-  position: absolute;
-  top: 350px;
   /* -webkit-box-shadow: 1px 3px 7px 1px #2424244b;
   box-shadow: 1px 3px 7px 1px #2424244b; */
 }
@@ -175,7 +189,6 @@ button span {
 
 
 .save-word {
-  z-index: 1;
   cursor: pointer;
   text-align: center;
   background-size: 200% auto;
@@ -185,10 +198,10 @@ button span {
   font-weight: 400;
   color: rgb(255, 253, 253);
   text-decoration: none;
-  margin-bottom: 17px;
   padding: 22px 55px;
   border-radius: 14px;
   transition: all 0.2s ease-in-out;
+  margin-bottom: 20px;
 }
 
 .btn-start-game:hover,
