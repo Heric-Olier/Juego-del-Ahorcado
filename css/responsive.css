@@ -46,7 +46,7 @@
   }
 }
 
-@media screen and (max-height: 580px) {
+@media screen and (max-height: 700px) {
   .social-icon-content {
     margin: 0 auto;
     margin-top: 2rem;
@@ -68,6 +68,10 @@
   .container {
     height: auto;
 
+  }
+
+  .button-content {
+    margin-bottom: 20px;
   }
 
   

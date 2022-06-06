@@ -201,7 +201,7 @@ const leaveGame = () => {
     window.open("../Juego-del-Ahorcado/index.html", "_self");
   }, 1800);
   notification(
-    `Te rendiste!...La palabra secreta era ${sortedWord} `,
+    `Te rendiste!...La palabra secreta era: ${sortedWord} `,
     "assets/icon-head-lose.svg"
   );
 };
@@ -275,7 +275,7 @@ document.addEventListener("keyup", (event) => {
       window.open("../Juego-del-Ahorcado/game.html", "_self");
     }, 1800);
     notification(
-      `Perdiste! la palabra secreta era: ${sortedWord}`,"assets/icon-head-lose.svg"
+      `Perdiste! la palabra secreta era:  ${sortedWord}`,"assets/icon-head-lose.svg"
     );
   }
 
