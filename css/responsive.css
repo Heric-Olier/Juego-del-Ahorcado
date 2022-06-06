@@ -9,6 +9,12 @@
     width: 320px;
   }
 
+  .logo-title-game,
+  .logo-title-game-dm {
+    width: 350px;
+  }
+
+
   .btn-add-word,
   .leave-game {
     width: 230px;
@@ -42,7 +48,7 @@
 
   .button-content {
     width: 430px;
-    margin: 0 auto;
+    margin-bottom: 30px;
   }
 }
 
