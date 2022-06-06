@@ -107,7 +107,7 @@ body.dark .text-content {
 }
 
 body.dark .alert {
-  background-color: var(--dark-bold);
+  background-color: var(--dark-light-gray);
   color: var(--white-bone);
 }
 
