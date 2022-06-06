@@ -6,8 +6,14 @@ const textAlert = document.querySelector(".alert"); // capturamos el span donde 
 const alertContainer = document.querySelector(".alert-container");
 
 
-//agregamos las palabras del usuario al array de palabras predeterminadas
+const getLocalStorage = () => {
+  gameWords = JSON.parse(localStorage.getItem("gameWords"));
+}
 
+getLocalStorage();
+
+
+//agregamos las palabras del usuario al array de palabras predeterminadas
 function addWords() {
   let word = fieldText.value.toUpperCase().trim();
   let WordValid = validateWord(word)
