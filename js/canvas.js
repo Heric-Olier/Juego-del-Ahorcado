@@ -11,20 +11,8 @@ const inputKeyboard = document.getElementById("input-keyboard");
 const alertContainer = document.querySelector(".alert-container");
 
 //palabras predeterminadas
-const gameWords = [
-  "ALURA",
-  "PYTHON",
-  "JAVA",
-  "CAFE",
-  "GATOS",
-  "PROGRAMAR",
-  "ELEFANTE",
-  "HTML",
-  "BACKEND",
-  "FRONTEND",
-  "DEVELOPER",
-  "MADRE",
-];
+
+const gameWords = JSON.parse(localStorage.getItem("gameWords"));
 
 //*!<-------------- seccion dibujar con canvas -------------->*/
 
@@ -275,7 +263,8 @@ document.addEventListener("keyup", (event) => {
       window.open("../Juego-del-Ahorcado/game.html", "_self");
     }, 1800);
     notification(
-      `Perdiste! la palabra secreta era:  ${sortedWord}`,"assets/icon-head-lose.svg"
+      `Perdiste! la palabra secreta era:  ${sortedWord}`,
+      "assets/icon-head-lose.svg"
     );
   }
 

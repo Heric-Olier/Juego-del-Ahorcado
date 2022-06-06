@@ -5,6 +5,8 @@ const btnSaveWord = document.querySelector(".save-word"); // capturamos el boton
 const textAlert = document.querySelector(".alert"); // capturamos el span donde se mostraran las alertas
 const alertContainer = document.querySelector(".alert-container");
 
+
+//palabras predeterminadas
 const gameWords = [
   'ALURA',
   'PYTHON',
@@ -17,10 +19,36 @@ const gameWords = [
   'BACKEND',
   'FRONTEND',
   'DEVELOPER',
-  'MADRE']; //palabras predeterminadas
-  
-  //creamos la funcion para mostrar las notificaciones de victoria o derrota
+  'MADRE'
+]; 
 
+//guardamos el array en localStorage
+
+const saveLocalStorage = () => {
+  localStorage.setItem("gameWords", JSON.stringify(gameWords));
+}
+
+//agregamos las palabras del usuario al array de palabras predeterminadas
+
+function addWords() {
+  let word = fieldText.value.toUpperCase().trim();
+  let WordValid = validateWord(word)
+  if (WordValid) {
+    gameWords.push(word);
+    saveLocalStorage();
+    fieldText.value = "";
+    console.log({ gameWords, word });
+  }
+}
+
+
+btnSaveWord.onclick = () => {
+  addWords();
+};
+
+
+
+  //creamos la funcion para mostrar las notificaciones de victoria o derrota
   const notification = (text, img) => {
     const imgAlert = document.createElement("img");
     textAlert.textContent = "";
@@ -36,17 +64,6 @@ const gameWords = [
 
   fieldText.focus();
 
-  //agregamos las palabras del usuario al array de palabras predeterminadas
-  
-  function addWords() {
-    let word = fieldText.value.toUpperCase().trim();
-    let WordValid = validateWord(word)
-    if (WordValid) {
-      gameWords.push(word);
-      fieldText.value = "";
-      console.log({ gameWords, word });
-    }
-  }
 
   
   //validamos que la palabra tenga mas de 3 letras y menos de 8
@@ -78,7 +95,7 @@ const gameWords = [
     }
 
     if (word.length >= 3 && word.length <= 8) {
-      setTimeout(() => {window.open("../Juego-del-Ahorcado/game.html", "_self")}, 2800);
+      setTimeout(() => {window.open("../game.html", "_self")}, 2800);
       notification("Palabra agregada con Exito!", 'assets/icon-head-win.svg');
       return true;    
     } 
@@ -95,8 +112,5 @@ const gameWords = [
   fieldText.focus();
   
 
-    btnSaveWord.onclick = () => {
-    addWords();
-  };
-  
+
   
