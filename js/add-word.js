@@ -73,7 +73,7 @@ btnSaveWord.onclick = () => {
     }
 
     if (word.length >= 3 && word.length <= 8) {
-      setTimeout(() => {window.open("../game.html", "_self")}, 2800);
+      setTimeout(() => {window.open("../Juego-del-Ahorcado/game.html", "_self")}, 2800);
       notification("Palabra agregada con Exito!", 'assets/icon-head-win.svg');
       return true;    
     } 
