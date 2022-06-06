@@ -9,7 +9,8 @@
     width: 320px;
   }
 
-  .btn-add-word, .leave-game {
+  .btn-add-word,
+  .leave-game {
     width: 230px;
     padding: 20px;
     font-size: 19px;
@@ -23,7 +24,6 @@
     margin-right: 30px;
     margin-left: 0;
     margin-bottom: 0;
-
   }
 
   .save-word {
@@ -46,45 +46,40 @@
   }
 }
 
-@media screen and (max-height: 700px) {
+@media screen and (min-height: 580px) {
   .social-icon-content {
     margin: 0 auto;
     margin-top: 2rem;
     display: flex;
     justify-content: center;
-   
   }
-  
+
   .text-area-container {
     margin: 0 auto;
     margin-bottom: 1.5rem;
     min-height: 100px;
   }
 
-    .content-logo {
-      margin-top: 20px;
-    }
-
-  .container {
-    height: auto;
-
+  .content-logo {
+    margin-top: 20px;
   }
-
-  .button-content {
-    margin-bottom: 20px;
-  }
-
-  
 
   footer {
     position: static;
-  
   }
-  
+
   body {
     width: 100%;
     height: 100%;
   }
 }
-  
 
+@media screen and (max-height: 700px) {
+  .container.game {
+    height: auto;
+  }
+
+  .button-content.game {
+    margin-bottom: 20px;
+  }
+}
