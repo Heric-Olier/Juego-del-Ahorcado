@@ -1,14 +1,23 @@
 # Desafio Juego del Ahorcado - ALURA LATAM - ORACLE ONE EDUCATION
 
 ---
+
 Link del proyecto abajo 👇
 
 ---
+
+### Tecnologias utilizadas:
+
+<img src="https://cdn-icons-png.flaticon.com/512/174/174854.png" width='30px' ><img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" width='30px' ><img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" width='30px' ><img src="https://cdn.icon-icons.com/icons2/1088/PNG/512/1485282157-adobe-photoshop-raster-graphics-editor-cc-creative-cloud_78285.png" width='33px' >
+
+---
+
 En este Segundo desafio del curso se nos pidio crear un "Juego del Ahorcado" con las siguientes condiciones:
 
 ---
 
 **Requisitos:**
+
 - Debe funcionar solo con letras mayúsculas;
 - No deben ser utilizadas letras con acentos ni caracteres especiales;
 - Al completar o dibujo de la horca, debe ser mostrado un mensaje "Fin del juego" en la pantalla;
@@ -21,22 +30,17 @@ En este Segundo desafio del curso se nos pidio crear un "Juego del Ahorcado" con
 - la pagina debe estar construida visualmente usando HTML y CSS y la parte Logica con JavaScript.
 
 ---
+
 **Caracteristicas:**
-- Diseño Responsivo - Mobile UI
-- Modo oscuro para darle un toque mas elegante y agradable a la vista del usuario
+
+- Diseño Responsivo - Mobile UI - Desktop UI
+- Modo claro - Modo oscuro con localstorage
 - Dibujo de la horca realizado con canvas
-
-### Tecnologias utilizadas:
-
-<img src="https://cdn-icons-png.flaticon.com/512/174/174854.png" width='30px' ><img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" width='30px' ><img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" width='30px' ><img src="https://cdn.icon-icons.com/icons2/1088/PNG/512/1485282157-adobe-photoshop-raster-graphics-editor-cc-creative-cloud_78285.png" width='33px' >
+- Notificaciones de alertas personalizadas
 
 ---
 
 ![](https://i.imgur.com/yeYsvNZ.jpg)
 ![](https://i.imgur.com/vX9dcFU.jpg)
-
-
-
-
 
 ## [ir a la pagina](https://heric-olier.github.io/Juego-del-Ahorcado/index.html) 👈
