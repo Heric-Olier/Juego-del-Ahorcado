@@ -14,12 +14,9 @@ const alertContainer = document.querySelector(".alert-container");
 
 const getLocalStorage = () => {
   gameWords = JSON.parse(localStorage.getItem("gameWords"));
-}
+};
 
 getLocalStorage();
-
-
-
 
 //*!<-------------- seccion dibujar con canvas -------------->*/
 
@@ -85,17 +82,6 @@ const drawHead = () => {
 const drawBody = () => {
   ctx.fillStyle = "#FFCF26"; // ?color Amarillo camisa
   ctx.fillRect(154.44, 103.5, 92.79, 69.59); //camisa amarilla
-  ctx.fillStyle = "#7C5011"; // ?color Marron piel
-  ctx.fillRect(154.64, 144.12, 23.25, 29.06); //brazo izquierdo
-  ctx.fillRect(223.68, 144.12, 23.25, 29.06); //brazo derecho
-  ctx.fillStyle = "#000000"; //? color negro
-  ctx.fillRect(176.27, 119.41, 1.3, 24.71); //borde negro camisa izquierdo
-  ctx.fillRect(223.99, 119.41, 1.3, 24.71); //borde negro camisa derecho
-};
-
-const drawBodyDark = () => {
-  ctx.fillStyle = "#d0d7e3"; // ?color gris camisa dark mode
-  ctx.fillRect(154.44, 103.5, 92.79, 69.59);
   ctx.fillStyle = "#7C5011"; // ?color Marron piel
   ctx.fillRect(154.64, 144.12, 23.25, 29.06); //brazo izquierdo
   ctx.fillRect(223.68, 144.12, 23.25, 29.06); //brazo derecho
@@ -220,17 +206,17 @@ let countWin = 0;
 remainAttempts.textContent = counter;
 
 // creamos la funcion para que el usuario presione una letra y se valide
-
 document.addEventListener("keyup", (event) => {
   const correctSpans = document.querySelectorAll(".true-letters span");
   const wrongSpans = document.querySelectorAll(".wrong-letters span");
 
   for (const indexLetter in letterCorrect) {
-    // validamos que el usuario presione una letra y no un numero o caracter especial y de ser asi, el sistema no reconozca dichas teclas
 
+    // validamos que el usuario presione una letra y no un numero o caracter especial y de ser asi, el sistema no reconozca dichas teclas
     if (/[^a-z ]/.test(event.key)) {
       return false;
     }
+
     // validamos que las teclas presionadas coincidan con las letras de la palabra aleatoria
     if (event.key.toUpperCase() === letterCorrect[indexLetter]) {
       correctSpans[indexLetter].textContent = letterCorrect[indexLetter];
@@ -286,7 +272,6 @@ document.addEventListener("keyup", (event) => {
 //*todo<-------------- seccion validar Letras incorrectas -------------->*/
 
 // validamos si el usuario va agotando sus intentos y dibujamos el canvas
-
 const validateDrawCanvas = () => {
   if (counter === 7) {
     drawThreeVertical();
