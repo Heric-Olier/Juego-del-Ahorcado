@@ -14,10 +14,9 @@
     width: 350px;
   }
 
-  textarea{
+  textarea {
     max-width: 700px;
   }
-
 
   .btn-add-word,
   .leave-game {
@@ -70,7 +69,6 @@
     top: 0;
   }
 
-
   .save-word {
     margin-bottom: 10px;
   }
@@ -90,7 +88,6 @@
 
   .container {
     height: auto;
-  
   }
 
   body {

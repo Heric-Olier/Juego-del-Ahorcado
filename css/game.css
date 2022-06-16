@@ -1,5 +1,3 @@
-
-
 /*! <---------header section --------->*/
 
 .header-btn {
@@ -58,7 +56,6 @@ button span {
   left: unset;
 }
 
-
 /*! <--------- Main section --------->*/
 
 .container {
@@ -79,45 +76,42 @@ button span {
 }
 
 .logo-title-game,
-  .logo-title-game-dm {
-    width: 290px;
-    margin-top: 25px;
-  }
+.logo-title-game-dm {
+  width: 290px;
+  margin-top: 25px;
+}
 
 .content-logo .logo-title-game .logo-title-game-dm {
   width: 100%;
 }
 
-
 .logo-title-game-dm {
   display: none;
 }
-
-
 
 /*! <--------- Notification alert section --------->*/
 
 .icon-head {
   margin-top: 15px;
   width: 40px;
-  
 }
 
 .alert-container.active {
   z-index: 2;
-  }
+}
 
 .alert.active {
   opacity: 1;
 }
 
 .scale-out-center.active {
-  -webkit-animation: scale-out-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-          animation: scale-out-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  -webkit-animation: scale-out-center 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    both;
+  animation: scale-out-center 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 .bounce-in-fwd.active {
-	-webkit-animation: bounce-in-fwd 700ms both;
-	        animation: bounce-in-fwd 700ms both;
+  -webkit-animation: bounce-in-fwd 700ms both;
+  animation: bounce-in-fwd 700ms both;
 }
 
 .alert-container {
@@ -127,7 +121,6 @@ button span {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .alert {
@@ -161,7 +154,6 @@ button span {
   background-color: #fdcd1d;
   -webkit-box-shadow: 1px 2px 5px 1px #24242457;
   box-shadow: 1px 2px 5px 1px #24242452;
-
 }
 
 .canvas {
@@ -172,7 +164,8 @@ button span {
   box-shadow: 1px 2px 5px 1px #24242452;
 }
 
-.true-letters, .wrong-letters {
+.true-letters,
+.wrong-letters {
   font-size: 25px;
   font-family: "Heebo", sans-serif;
   margin-top: 15px;
@@ -184,10 +177,10 @@ button span {
 
 .wrong-letters {
   margin-top: 35px;
-
 }
 
-.content-letters h2 {  /*letras erroneas*/
+.content-letters h2 {
+  /*letras erroneas*/
   font-family: "Heebo", sans-serif;
   color: #1e2220;
   font-size: 18px;
@@ -197,7 +190,8 @@ button span {
   top: 20px;
 }
 
-.true-letters span, .wrong-letters span {
+.true-letters span,
+.wrong-letters span {
   height: 30px;
   width: 30px;
   color: #1e2220;
@@ -215,7 +209,6 @@ button span {
   text-align: center;
   position: relative;
   top: 25px;
-  
 }
 
 .content-letters {
@@ -266,7 +259,7 @@ button span {
 }
 
 .leave-game:hover {
-  font-weight:500;
+  font-weight: 500;
   color: #fff;
   border: transparent;
   -webkit-box-shadow: 1px 2px 5px 1px #2424247c;
@@ -330,7 +323,3 @@ button span {
 
 /* .input-keyboard {
   /* color: transparent; */
-
-
-
-
