@@ -11,7 +11,6 @@ const inputKeyboard = document.getElementById("input-keyboard");
 const alertContainer = document.querySelector(".alert-container");
 
 //palabras predeterminadas
-
 const getLocalStorage = () => {
   gameWords = JSON.parse(localStorage.getItem("gameWords"));
 };
