@@ -46,7 +46,6 @@ const drawThreeHorizontal = () => {
 };
 
 /*<--------3* dibujamos la cuerda ------->*/
-
 const drawThreeRope = () => {
   ctx.fillStyle = "#965E4D"; // ?color Marron claro
   ctx.fillRect(198.65, 30, 5.15, 26.92); //cuerda
@@ -58,7 +57,6 @@ const drawThreeRope = () => {
 };
 
 /*<--------4* dibujamos la cabeza con todos sus detalles ------->*/
-
 const drawHead = () => {
   ctx.fillStyle = "#7C5011"; // ?color Marron piel
   ctx.fillRect(177.69, 57.08, 46.39, 46.45); //cabeza
