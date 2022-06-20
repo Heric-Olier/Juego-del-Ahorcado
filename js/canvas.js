@@ -75,7 +75,6 @@ const drawHead = () => {
 };
 
 /*<--------5* dibujamos el curpo, la camisa, y los brazos ------->*/
-
 const drawBody = () => {
   ctx.fillStyle = "#FFCF26"; // ?color Amarillo camisa
   ctx.fillRect(154.44, 103.5, 92.79, 69.59); //camisa amarilla
