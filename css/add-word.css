@@ -1,4 +1,3 @@
-
 /*! <---------header section --------->*/
 
 .header-btn {
@@ -8,7 +7,6 @@
   position: absolute;
   top: 0;
   margin-top: 15px;
-
 }
 
 /*! <---------switch button section --------->*/
@@ -86,29 +84,27 @@ button span {
   display: none;
 }
 
-
 /*! <--------- Text Area section --------->*/
 
 .text-area-container {
-    width: 80%;
-    max-width: 560px;
-    height: 200px;
+  width: 80%;
+  max-width: 560px;
+  height: 200px;
 }
 
-
 .text-content {
-    text-transform: uppercase;
-    outline: none;
-    text-align: center;
-    font-size: 22px;
-    font-family: "Heebo", sans-serif;
-    width: 100%;
-    height: 100%;
-    resize: none;
-    border-radius: 10px;
-    border: none;
-    -webkit-box-shadow: 1px 2px 5px 1px #24242457;
-    box-shadow: 1px 2px 5px 1px #24242452;
+  text-transform: uppercase;
+  outline: none;
+  text-align: center;
+  font-size: 22px;
+  font-family: "Heebo", sans-serif;
+  width: 100%;
+  height: 100%;
+  resize: none;
+  border-radius: 10px;
+  border: none;
+  -webkit-box-shadow: 1px 2px 5px 1px #24242457;
+  box-shadow: 1px 2px 5px 1px #24242452;
 }
 
 ::placeholder {
@@ -116,8 +112,8 @@ button span {
 }
 
 .text-advert {
-    font-size: 14px;
-    font-family: "Heebo", sans-serif;
+  font-size: 14px;
+  font-family: "Heebo", sans-serif;
 }
 
 /*! <--------- Notification alert section --------->*/
@@ -125,11 +121,10 @@ button span {
 .icon-head {
   margin-top: 15px;
   width: 40px;
-  
 }
 
 .alert-container.active {
-z-index: 2;
+  z-index: 2;
 }
 
 .alert.active {
@@ -137,12 +132,13 @@ z-index: 2;
 }
 
 .scale-out-center.active {
-  -webkit-animation: scale-out-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-          animation: scale-out-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  -webkit-animation: scale-out-center 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    both;
+  animation: scale-out-center 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 .bounce-in-fwd.active {
-	-webkit-animation: bounce-in-fwd 700ms both;
-	        animation: bounce-in-fwd 700ms both;
+  -webkit-animation: bounce-in-fwd 700ms both;
+  animation: bounce-in-fwd 700ms both;
 }
 
 .alert-container {
@@ -152,9 +148,7 @@ z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
-
 
 .alert {
   display: flex;
@@ -175,8 +169,7 @@ z-index: 2;
   text-align: center;
   max-width: 300px;
   width: 100%;
-  /* -webkit-box-shadow: 1px 3px 7px 1px #2424244b;
-  box-shadow: 1px 3px 7px 1px #2424244b; */
+  
 }
 
 /*! <--------- buttons section --------->*/
@@ -186,7 +179,6 @@ z-index: 2;
   flex-direction: column;
   align-items: center;
 }
-
 
 .save-word {
   cursor: pointer;
@@ -211,7 +203,6 @@ z-index: 2;
   transform: scale(1.08);
 }
 
-
 .save-word:hover {
   font-weight: bold;
   font-size: 19.5px;
@@ -223,13 +214,12 @@ z-index: 2;
 }
 
 .btn-add-word:hover {
-  font-weight:500;
+  font-weight: 500;
   color: #fff;
   border: transparent;
   -webkit-box-shadow: 1px 2px 5px 1px #2424247c;
   box-shadow: 1px 2px 5px 1px #2424247c;
   background-color: #1e2220;
-
 }
 
 .btn-start-game:hover,
@@ -310,7 +300,6 @@ footer {
   margin-top: 10px;
   font-family: "Heebo", sans-serif;
 }
-
 
 .name-footer-dm {
   display: none;
