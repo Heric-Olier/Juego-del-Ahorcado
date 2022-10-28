@@ -210,7 +210,7 @@ document.addEventListener("keyup", (event) => {
 
     // validamos que el usuario presione una letra y no un numero o caracter especial y de ser asi, el sistema no reconozca dichas teclas
     if (/[^a-z ]/.test(event.key)) {
-      return false;
+      return;
     }
 
     // validamos que las teclas presionadas coincidan con las letras de la palabra aleatoria
